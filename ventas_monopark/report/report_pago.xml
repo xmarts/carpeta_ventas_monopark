@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_payment_receipt_document_inherit" inherit_id="account.report_payment_receipt_document">
+        <xpath expr="//t[@t-call='web.external_layout']" position="replace">
+        	  <div class="header">
+                    <div style="width:100%;">
+                        <table class="table" style="border-top:6px solid #F77B22;" border="0">
+                            <tr>
+                                <td style="width:50%;padding:4px;" class="text-center">   
+                                	 <img t-attf-src="data:image/*;base64,{{o.company_id.logo}}" style="max-height:80px;max-width:120px;"/> 
+                                </td>
+                                <td style="width:50%;padding:4px;background:#f1f1f1;font-size:9pt;">
+                                    <div class="text-center">
+                                        <table style="width:90%;">
+                                          
+                                                <tr>
+                                                    <th style="border: inset 0pt;padding:0 10px 0 0 !important;font-size:8pt;text-align:right;">Payment Date:</th>
+                                                    <td style="border: inset 0pt;padding:0 !important;font-size:8pt;text-align:left;">
+                                                    <span t-field="o.payment_date"/>
+                                                    </td>
+                                                </tr>
+                                         
+                                            
+                                                <tr>
+                                                    <th style="border: inset 0pt;padding:0 10px 0 0 !important;font-size:8pt;text-align:right;"> 
+                                                    	<t t-if="o.partner_type == 'customer'">
+								                            <strong>Customer: </strong>
+								                        </t>
+								                        <t t-if="o.partner_type == 'supplier'">
+								                            <strong>Vendor: </strong>
+								                        </t></th>
+                                                    <td style="border: inset 0pt;padding:0 !important;font-size:8pt;text-align:left;">
+								                    <span t-field="o.partner_id"/>
+                                                    </td>
+                                                </tr>
+                                     
+                                                <tr t-if="o.payment_method_id">
+                                                    <th style="border: inset 0pt;padding:0 10px 0 0 !important;font-size:8pt;text-align:right;">Payment Method:</th>
+                                                    <td style="border: inset 0pt;padding:0 !important;font-size:8pt;text-align:left;">
+                                                      <span t-field="o.payment_method_id.name"/>
+                                                    </td>
+                                                </tr>
+
+                                                <tr t-if="o.amount">
+                                                    <th style="border: inset 0pt;padding:0 10px 0 0 !important;font-size:8pt;text-align:right;">Payment Amount: </th>
+                                                    <td style="border: inset 0pt;padding:0 !important;font-size:8pt;text-align:left;">
+                                                      <span t-field="o.amount" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                                    </td>
+                                                </tr>
+
+                                                <tr t-if="o.payment_method_id">
+                                                    <th style="border: inset 0pt;padding:0 10px 0 0 !important;font-size:8pt;text-align:right;">Memo:</th>
+                                                    <td style="border: inset 0pt;padding:0 !important;font-size:8pt;text-align:left;">
+                                                     <span t-field="o.communication"/>
+                                                    </td>
+                                                </tr>
+                                           
+                
+                                        </table>
+                                    </div>
+                                   
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background:#F77B22;color:#fff;border-rigth:1px solid #fff;" colspan="2" class="text-center">
+                                   <h2><strong>Payment Receipt: <span t-field="o.name"/></strong></h2>
+                                </td>
+                              
+                            </tr>
+                        </table>    
+                    </div>
+                </div> 
+                <br/>
+            <t t-set="o" t-value="o.with_context({'lang': lang})"/>
+            <div class="page">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th><span>Invoice Date</span></th>
+                            <th><span>Invoice Number</span></th>
+                            <th class="text-right"><span>Original Amount</span></th>
+                            <th class="text-right"><span>Amount Paid</span></th>
+                            <th class="text-right"><span>Balance</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="o.reconciled_invoice_ids" t-as="inv">
+                            <td><span t-field="inv.date_invoice"/></td>
+                            <td><span t-field="inv.number"/></td>
+                            <td class="text-right"><span t-field="inv.amount_total"/></td>
+                            <td class="text-right"><span t-esc="o._get_invoice_payment_amount(inv)" t-options="{'widget': 'monetary', 'display_currency': inv.currency_id}"/></td>
+                            <td class="text-right"><span t-field="inv.residual"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+        </xpath>
+    </template>
+</odoo>
