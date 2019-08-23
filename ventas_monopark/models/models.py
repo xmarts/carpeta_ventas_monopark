@@ -34,7 +34,10 @@ class ReportCot(models.Model):
 		('type1', 'Por parte del cliente'),
 		('type2', 'Cotizado'),
 		('type3', 'Por confirmar'),
-		('type4', 'Otros'),], string="Instalación", default='type1')
+		('type4', 'Otros'),
+		('type6', 'Gratis ZM GDL'),
+		('type7', 'Gratis ZM CDMX'),
+		('type8', 'Gratis ZM Mérida'),], string="Instalación", default='type1')
 	entrega = fields.Many2many('tiempo.entrega', string="Tiempo de entrega")
 	forma_pago = fields.Char(string="Forma de pago")
 	observaciones =fields.Many2many('obser.sale', string="Observaciones")
