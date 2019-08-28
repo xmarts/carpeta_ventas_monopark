@@ -111,11 +111,8 @@
                                                 <span t-field="line.product_uom_qty"/>
                                                 <span t-field="line.product_uom" groups="uom.group_uom"/>
                                             </td>
-                                            <td>
-                                                <div>
-                                                    $
-                                                    <span t-field="line.price_unit"/>
-                                                </div>
+                                            <td class="text-right">
+                                                <span t-esc="'$ ' + str(line.price_unit)"/> 
                                             </td>
                                             
                                             <td class="text-right o_price_total">
