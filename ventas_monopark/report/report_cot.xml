@@ -6,7 +6,6 @@
                 <div class="page">
                     <div class="oe_structure"/>
                         <div t-if="doc.proyecto_sale">
-                            <strong>Nombre del proyecto: </strong>
                             <span t-field="doc.proyecto_sale"/>
                         </div>
                         <div class = 'col-xs-6 text-left' style="font-size:25px;"> 
@@ -112,7 +111,7 @@
                                                 <span t-field="line.product_uom_qty"/>
                                                 <span t-field="line.product_uom" groups="uom.group_uom"/>
                                             </td>
-                                            <td class="text-right">
+                                            <td>
                                                 <div>
                                                     $
                                                     <span t-field="line.price_unit"/>
