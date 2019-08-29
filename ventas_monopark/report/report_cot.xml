@@ -77,17 +77,17 @@
                         <br/>
                         <br/>
                         <t t-set="display_discount" t-value="any([l.discount for l in doc.order_line])"/>
-                        <table class="table table-sm o_main_table">
+                        <table class="table table-sm o_main_table" styel="font-size:8pt;">
                             <thead>
                                 <tr>
                                     <!-- TODO: remove in master -->
                                     <t t-set="colspan" t-value="9"/>
-                                    <th class="text-left">Imagen</th>
-                                    <th class="text-left">Descripción</th>
-                                    <th class="text-left">Tiempo de entrega</th>
-                                    <th class="text-right">Cantidad</th>
-                                    <th class="text-right">Precio público</th>
-                                    <th class="text-right">
+                                    <th class="text-left" style="font-size:10pt;">Imagen</th>
+                                    <th class="text-left" style="font-size:10pt;">Descripción</th>
+                                    <th class="text-left" style="font-size:10pt;">Tiempo de entrega</th>
+                                    <th class="text-right" style="font-size:10pt;">Cantidad</th>
+                                    <th class="text-right" style="font-size:10pt;">Precio público</th>
+                                    <th class="text-right" style="font-size:10pt;">
                                         <t groups="account.group_show_line_subtotals_tax_excluded">Precio distribuidor</t>
                                         <t groups="account.group_show_line_subtotals_tax_included">Precio distribuidor</t>
                                     </th>
@@ -106,30 +106,30 @@
                                         <t t-if="not line.display_type">
                                             <td><img t-if="line.product_id.image_medium" t-att-src="image_data_uri(line.product_id.image_medium)" style="width:100%;"/>
                                    </td>
-                                            <td><span t-field="line.name"/></td>
-                                            <td><span t-field="line.tiempo_entrega_tabla"/></td>
-                                            <td class="text-right">
+                                            <td style="font-size:10pt;"><span t-field="line.name"/></td>
+                                            <td style="font-size:10pt;"><span t-field="line.tiempo_entrega_tabla"/></td>
+                                            <td class="text-right" style="font-size:10pt;">
                                                 <span t-field="line.product_uom_qty"/>
                                                 <span t-field="line.product_uom" groups="uom.group_uom"/>
                                             </td>
-                                            <td class="text-right">
+                                            <td class="text-right" style="font-size:10pt;width:180px;">
                                                 <span t-esc="'$ ' + str(line.price_unit)"/> 
                                             </td>
                                             
-                                            <td class="text-right o_price_total">
+                                            <td class="text-right o_price_total" style="font-size:10pt;">
                                                 <span t-field="line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
                                                 <span t-field="line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
                                             </td>
                                         </t>
                                         <t t-if="line.display_type == 'line_section'">
-                                            <td colspan="99">
+                                            <td colspan="99" style="font-size:10pt;">
                                                 <span t-field="line.name"/>
                                             </td>
                                             <t t-set="current_section" t-value="line"/>
                                             <t t-set="current_subtotal" t-value="0"/>
                                         </t>
                                         <t t-if="line.display_type == 'line_note'">
-                                            <td colspan="99">
+                                            <td colspan="99" style="font-size:10pt;">
                                                 <span t-field="line.name"/>
                                             </td>
                                         </t>
@@ -137,7 +137,7 @@
 
                                     <t t-if="current_section and (line_last or doc.order_line[line_index+1].display_type == 'line_section')">
                                         <tr class="is-subtotal text-right">
-                                            <td colspan="99">
+                                            <td colspan="99" style="font-size:10pt;">
                                                 <strong class="mr16">Subtotal</strong>
                                                 <span t-esc="current_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
                                             </td>
