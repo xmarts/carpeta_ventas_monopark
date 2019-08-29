@@ -40,7 +40,9 @@
         <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='name']" position="after">
           <field name="tiempo_entrega_tabla" widget="many2many_tags" options="{'no_create_edit': True}"/>
         </xpath>
-
+        <!--<xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='price_subtotal']" position="before">
+          <field name="precio_especial" widget="monetary"/>
+        </xpath>-->
         <xpath expr="//page[@name='other_information']" position="after">
           <page string="Comentarios" name="comentarios" groups="sales_team.group_sale_manager">
             <field name="comentarios"/>

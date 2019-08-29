@@ -60,6 +60,17 @@ class ReportCot(models.Model):
 	#price_unit = fields.Float('Unit Price', required=True, digits=dp.get_precision('Product Price'), default=0.0)
 	tiempo_entrega_tabla = fields.Many2many('tiempo.entrega', string="Tiempo de entrega")
 	price_product_cantidad = fields.Monetary(compute='_compute_product_cantidad', string='Subtotal', readonly=True, store=True)
+	'''precio_especial= fields.Monetary(string="Precio especial", compute="_get_precio_especial")
+
+	@api.depends('price_unit')
+	def _get_precio_especial(self):
+		for line in self:
+			precio = 0.0
+			if line.x_studio_desc:
+				precio = line.price_unit - (line.price_unit * (line.x_studio_desc / 100))
+				line.precio_especial = precio
+			else:
+				line.precio_especial = 0.0	'''
 
 	@api.depends('price_unit', 'product_uom_qty')
 	def _compute_product_cantidad(self):
