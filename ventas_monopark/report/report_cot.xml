@@ -112,7 +112,7 @@
                                         <t t-if="not line.display_type">
                                             <td><img t-if="line.product_id.image_medium" t-att-src="image_data_uri(line.product_id.image_medium)" style="width:100%;"/>
                                             </td>
-                                            <td style="font-size:9pt;"><span t-field="line.name"/></td>
+                                            <td style="font-size:9pt;font-size:220px;"><span t-field="line.name"/></td>
                                             <td style="font-size:10pt;"><span t-field="line.tiempo_entrega_tabla"/></td>
                                             <td class="text-right" style="font-size:10pt;width:70px">
                                                 <span t-field="line.product_uom_qty"/>
