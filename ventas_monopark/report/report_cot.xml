@@ -114,29 +114,24 @@
                                             </td>
                                             <td style="font-size:10pt;"><span t-field="line.name"/></td>
                                             <td style="font-size:10pt;"><span t-field="line.tiempo_entrega_tabla"/></td>
-                                            <td class="text-right" style="font-size:10pt;">
+                                            <td class="text-right" style="font-size:10pt;width:100px">
                                                 <span t-field="line.product_uom_qty"/>
                                                 <span t-field="line.product_uom" groups="uom.group_uom"/>
                                             </td>
-                                            <td class="text-right" style="font-size:10pt;width:150px;">
+                                            <td class="text-right" style="font-size:10pt;width:140px;">
                                                 <span t-esc="'$ ' + str(line.product_id.lst_price)"/> 
                                             </td>
-                                            <td class="text-right" style="font-size:10pt;width:150px;">
+                                            <td class="text-right" style="font-size:10pt;width:140px;">
                                                 <span t-esc="'$ ' + str(line.price_unit)"/>
                                             </td>
                                             <!--<td class="text-right o_price_total" style="font-size:10pt;">
                                                 <span t-field="line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
                                                 <span t-field="line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
                                             </td>-->
-                                            
-                                            <td class="text-right" style="font-size:10pt;width:150px;">
-                                                <t t-if="line.discount">
-                                                   <t t-set="descuento" t-value="line.price_unit * (line.discount / 100)"/>
-                                                   <t t-set="precio_especial" t-value="line.price_unit - descuento"/>
-                                                   <span t-esc="'$ ' + str(precio_especial)"/>
-                                                </t> 
+                                            <td class="text-right" style="font-size:10pt;width:140px;">
+                                                <span t-field="doc.precio_Especial"/>
                                             </td>
-                                            <td class="text-right" style="font-size:10pt;width:150px;">
+                                            <td class="text-right" style="font-size:10pt;width:140px;">
                                                 <span t-esc="'$ ' + str(line.price_subtotal)"/>
                                             </td>
                                                                                     </t>
