@@ -58,6 +58,7 @@ class ReportCot(models.Model):
 	_inherit = "sale.order.line"
 
 	#price_unit = fields.Float('Unit Price', required=True, digits=dp.get_precision('Product Price'), default=0.0)
+	imagen_producto = fields.Binary(compute="_get_imagen")
 	tiempo_entrega_tabla = fields.Many2many('tiempo.entrega', string="Tiempo de entrega")
 	price_product_cantidad = fields.Monetary(compute='_compute_product_cantidad', string='Subtotal', readonly=True, store=True)
 	precio_especial= fields.Monetary(string="Precio especial", compute="_get_precio_especial")
@@ -76,3 +77,9 @@ class ReportCot(models.Model):
 	def _compute_product_cantidad(self):
 		for line in self:
 			line.price_product_cantidad = line.product_uom_qty * line.price_unit
+
+	@api.depends('product_id')
+	def _get_imagen(self):
+		for line in self:
+			if line.product_id:
+				line.imagen_producto = line.product_id.image_medium
