@@ -46,7 +46,7 @@
           <field name="imagen_producto" options="{&quot;size&quot;: [70, 70]}" widget="image" string="Imagen"/>
         </xpath>
         <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='price_subtotal']" position="before">
-          <field name="precio_especial" widget="monetary" invisible="1"/>
+          <field name="precio_especial" widget="monetary" invisible="0"/>
         </xpath>
         <!--  FIN AGREGAMOS DOS COLUMNAS A LA TABLA DE  ORDER_LINES DE VENTAS  -->
 
