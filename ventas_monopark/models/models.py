@@ -44,6 +44,7 @@ class ReportCot(models.Model):
 	pago_importacion = fields.Char(string="En los productos de importacion y fabricacion el pago sera")
 	nota_venta = fields.Char(string="Nota", default="Precios sujetos a cambio sin previo aviso")
 	comentarios = fields.Char(string="Comentarios")
+	proyecto = fields.Char(string="Proyecto")
 
 	@api.one
 	def _opportunity_in_proyecto(self):
