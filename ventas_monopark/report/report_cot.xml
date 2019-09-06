@@ -5,9 +5,9 @@
             <xpath expr="//div[@class='page']" position="replace">
                 <div class="page">
                     <div class="oe_structure"/>
-                        <div t-if="doc.proyecto_sale_dos">
+                        <!--<div t-if="doc.proyecto_sale_dos">
                             <span t-field="doc.proyecto_sale_dos"/>
-                        </div>
+                        </div>-->
                         <br/>
                         <div class = 'col-xs-6 text-left' style="font-size:25px;"> 
                             <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
