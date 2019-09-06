@@ -5,8 +5,8 @@
             <xpath expr="//div[@class='page']" position="replace">
                 <div class="page">
                     <div class="oe_structure"/>
-                        <div t-if="doc.proyecto_sale">
-                            <span t-field="doc.proyecto_sale"/>
+                        <div t-if="doc.proyecto_sale_dos">
+                            <span t-field="doc.proyecto_sale_dos"/>
                         </div>
                         <br/>
                         <div class = 'col-xs-6 text-left' style="font-size:25px;"> 
@@ -48,12 +48,12 @@
                                         <p t-field="doc.entrega"/>
                                     </t>
                                 </td>
-                                <td>
+                                <!--<td>
                                     <t t-if="doc.user_id"  >
                                         <strong>Asesor Comercial:</strong>
                                         <p t-field="doc.user_id"/>
                                     </t>
-                                </td>
+                                </td>-->
                                 <td>
                                     <t t-if="doc.user_id.login">
                                         <strong>Asesor:</strong>

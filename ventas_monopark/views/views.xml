@@ -36,7 +36,7 @@
         </xpath>
         <!--  AGREGAMOS UN NUEVO CAMPO AL FORMULARIO DE VENTAS -->
         <xpath expr="//field[@name='partner_id']" position="before">
-          <field name="proyecto_sale"/>
+          <field name="proyecto_sale_dos"/>
         </xpath>
         <!--  AGREGAMOS DOS COLUMNAS A LA TABLA DE  ORDER_LINES DE VENTAS  -->
         <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='name']" position="after">
