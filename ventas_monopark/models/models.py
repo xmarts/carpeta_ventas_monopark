@@ -63,16 +63,37 @@ class ReportCot(models.Model):
 	tiempo_entrega_tabla = fields.Many2many('tiempo.entrega', string="Tiempo de entrega")
 	price_product_cantidad = fields.Monetary(compute='_compute_product_cantidad', string='Subtotal', readonly=True, store=True)
 	precio_especial= fields.Monetary(string="Precio especial", compute="_get_precio_especial")
-
+	precio_publico_reporte = fields.Monetary(compute="_get_precio_publico_reporte")
+	precio_distribuidor_reporte = fields.Monetary(compute="_get_precio_distribuidor_reporte")
+	
 	@api.depends('price_unit')
 	def _get_precio_especial(self):
 		for line in self:
 			precio = 0.0
-			if line.discount:
-				precio = line.price_unit - (line.price_unit * (line.discount / 100))
+			if line.x_studio_desc:
+				precio = line.price_unit - (line.price_unit * (line.x_studio_desc / 100))
 				line.precio_especial = precio
 			else:
 				line.precio_especial = 0.0
+
+	@api.depends('product_id.lst_price')
+	def _get_precio_publico_reporte(self):
+		for line in self:
+			precio = 0.0
+			if line.product_id:
+				precio = line.product_id.lst_price
+				line.precio_publico_reporte = precio
+			else:
+				line.precio_publico_reporte = 0.0
+	@api.depends('price_unit')
+	def _get_precio_distribuidor_reporte(self):
+		for line in self:
+			precio = 0.0
+			if line.price_unit:
+				precio = line.price_unit
+				line.precio_distribuidor_reporte = precio
+			else:
+				line.precio_distribuidor_reporte = 0.0							
 
 	@api.depends('price_unit', 'product_uom_qty')
 	def _compute_product_cantidad(self):

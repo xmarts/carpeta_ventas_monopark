@@ -52,7 +52,9 @@
         </xpath>
         <!--  AGREGAMOS LA COLUMNA DE PRECIO ESPECIAL  -->
         <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='price_subtotal']" position="before">
-          <field name="precio_especial" widget="monetary" invisible="0"/>
+          <field name="precio_publico_reporte" widget="monetary" invisible="1"/>
+          <field name="precio_distribuidor_reporte" widget="monetary" invisible="1"/>
+          <field name="precio_especial" widget="monetary"/>
         </xpath>
         <!--  AGREGAMOS UNA NUEVA PAGIAN PARA LOS COMENTARIOS  -->
         <xpath expr="//page[@name='other_information']" position="after">
