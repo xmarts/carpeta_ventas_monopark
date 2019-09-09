@@ -93,7 +93,7 @@
                                     </th>
                                     <t t-set="validate" t-value="0"/>
                                     <t t-foreach="doc.order_line" t-as="line">
-                                        <t t-if="line.x_studio_desc != 0.00">
+                                        <t t-if="line.discount != 0.00">
                                             <t t-set="validate" t-value="1"/>
                                         </t>
                                     </t>

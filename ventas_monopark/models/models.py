@@ -70,8 +70,8 @@ class ReportCot(models.Model):
 	def _get_precio_especial(self):
 		for line in self:
 			precio = 0.0
-			if line.x_studio_desc:
-				precio = line.price_unit - (line.price_unit * (line.x_studio_desc / 100))
+			if line.discount:
+				precio = line.price_unit - (line.price_unit * (line.discount / 100))
 				line.precio_especial = precio
 			else:
 				line.precio_especial = 0.0
