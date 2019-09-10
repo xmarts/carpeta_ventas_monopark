@@ -9,14 +9,21 @@
                             <span t-field="doc.proyecto_sale_dos"/>
                         </div>
                         <br/>
-                        <div class = 'col-xs-6 text-left' style="font-size:25px;"> 
-                            <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
+                        <div class = 'col-xs-6 text-left' style="font-size:25px;">
+                            <t t-if="doc.state not in ['sale']">
+                                <span>PEDIDO NUMERO #</span>
+                            </t>
+                            <t t-else="">
+                                <span>COTIZACIÓN #</span>
+                            </t>
+                             
+                            <!--<t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
                                 <span t-if="doc.state not in ['draft','sent']">PEDIDO NUMERO # </span>
                                 <span t-if="doc.state in ['draft','sent']">PEDIDO NUMERO # </span>
                             </t>
                             <t t-if="env.context.get('proforma', False) or is_pro_forma">
                                 <span>PEDIDO NUMERO # </span>
-                            </t>
+                            </t>-->
                             <span t-field="doc.name"/>
                         </div>
 
@@ -86,10 +93,9 @@
                                     <th class="text-left" style="font-size:9pt;">Descripción</th>
                                     <th class="text-left" style="font-size:9pt;">Tiempo de entrega</th>
                                     <th class="text-right" style="font-size:9pt;">Cantidad</th>
-                                    <th class="text-right" style="font-size:9pt;">Precio público</th>
+                                    <th class="text-right" style="font-size:9pt;">Precio unitario público</th>
                                     <th class="text-right" style="font-size:9pt;">
-                                        <t groups="account.group_show_line_subtotals_tax_excluded">Precio distribuidor</t>
-                                        <t groups="account.group_show_line_subtotals_tax_included">Precio distribuidor</t>
+                                        <t groups="account.group_show_line_subtotals_tax_excluded">Precio unitario distribuidor</t>
                                     </th>
                                     <t t-set="validate" t-value="0"/>
                                     <t t-foreach="doc.order_line" t-as="line">
@@ -98,11 +104,11 @@
                                         </t>
                                     </t>
                                     <t t-if="validate == 1">
-                                        <th class="text-right" style="font-size:9pt;">Precio especial</th>
+                                        <th class="text-right" style="font-size:9pt;">Precio especial unitario</th>
                                     </t>
                                     
                                     <th class="text-right" style="font-size:9pt;">
-                                        Importe pesos
+                                        Subtotal
                                     </th>
                                         
 
