@@ -11,10 +11,10 @@
                         <br/>
                         <div class = 'col-xs-6 text-left' style="font-size:25px;">
                             <t t-if="doc.state not in ['sale']">
-                                <span>PEDIDO NUMERO #</span>
+                                <span>COTIZACIÓN # </span>
                             </t>
                             <t t-else="">
-                                <span>COTIZACIÓN #</span>
+                                <span>PEDIDO NUMERO # </span>
                             </t>
                              
                             <!--<t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
