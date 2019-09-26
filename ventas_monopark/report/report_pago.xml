@@ -3,7 +3,7 @@
     <template id="report_payment_receipt_document_inherit" inherit_id="account.report_payment_receipt_document">
         <xpath expr="//t[@t-call='web.external_layout']" position="replace">
             <t t-call="web.basic_layout">
-                <t t-set="xml" t-value="o.l10n_mx_edi_get_xml_etree()"/> 
+                <t t-set="xml" t-value="o.l10n_mx_edi_get_xml_etree() or false"/> 
                 <t t-set="tfd" t-value="o.l10n_mx_edi_get_tfd_etree(xml)"/>
             	<div class="header">     
                     <div style="width:100%;">
@@ -48,49 +48,6 @@
                                                     <span t-esc="xml.Emisor.get('Rfc')"/>
                                                 </td>
                                             </tr>
-                                                <!--<tr>
-                                                    <th style="border: inset 0pt;padding:0 10px 0 0 !important;font-size:8pt;text-align:right;">Payment Date:</th>
-                                                    <td style="border: inset 0pt;padding:0 !important;font-size:8pt;text-align:left;">
-                                                    <span t-field="o.payment_date"/>
-                                                    </td>
-                                                </tr>
-                                         
-                                            
-                                                <tr>
-                                                    <th style="border: inset 0pt;padding:0 10px 0 0 !important;font-size:8pt;text-align:right;"> 
-                                                    	<t t-if="o.partner_type == 'customer'">
-    							                            <strong>Customer: </strong>
-    							                        </t>
-    							                        <t t-if="o.partner_type == 'supplier'">
-    							                            <strong>Vendor: </strong>
-    							                        </t></th>
-                                                    <td style="border: inset 0pt;padding:0 !important;font-size:8pt;text-align:left;">
-    							                    <span t-field="o.partner_id"/>
-                                                    </td>
-                                                </tr>
-                                     
-                                                <tr t-if="o.payment_method_id">
-                                                    <th style="border: inset 0pt;padding:0 10px 0 0 !important;font-size:8pt;text-align:right;">Payment Method:</th>
-                                                    <td style="border: inset 0pt;padding:0 !important;font-size:8pt;text-align:left;">
-                                                      <span t-field="o.payment_method_id.name"/>
-                                                    </td>
-                                                </tr>
-
-                                                <tr t-if="o.amount">
-                                                    <th style="border: inset 0pt;padding:0 10px 0 0 !important;font-size:8pt;text-align:right;">Payment Amount: </th>
-                                                    <td style="border: inset 0pt;padding:0 !important;font-size:8pt;text-align:left;">
-                                                      <span t-field="o.amount" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
-                                                    </td>
-                                                </tr>
-
-                                                <tr t-if="o.payment_method_id">
-                                                    <th style="border: inset 0pt;padding:0 10px 0 0 !important;font-size:8pt;text-align:right;">Memo:</th>
-                                                    <td style="border: inset 0pt;padding:0 !important;font-size:8pt;text-align:left;">
-                                                     <span t-field="o.communication"/>
-                                                    </td>
-                                                </tr>-->
-                                           
-                
                                         </table>
                                     </div>
                                     
@@ -165,11 +122,11 @@
                                 <br/>
                             </t>
                             
-                            <!--<t t-if="o.l10n_mx_edi_usage">
+                            <t t-if="o.l10n_mx_edi_usage">
                                 <strong>Uso CFDI</strong>
                                 <br/>
-                                <span t-field="o.l10n_mx_edi_usage"/>
-                            </t>-->
+                                <span t-field="xml.Receptor.get('UsoCFDI')"/>
+                            </t>
                         </div>
 
                         <div class="col-auto mw-100 mb-2" t-if="xml.get('LugarExpedicion')" style="font-size:10pt;">
@@ -196,7 +153,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!--<t t-foreach="xml.Conceptos.Concepto" t-as="var">
+                            <!--<t t-forgeach="xml.Conceptos.Concepto" t-as="var">
                                 <tr>
                                     <td><span t-esc="var.get('Cantidad')"/></td>
                                     <td><span t-esc="var.get('ClaveUnidad')"/></td>
@@ -223,31 +180,11 @@
                             <tr style="background:#f1f1f1;">
                                 <td>
                                     <strong>Fecha</strong>
-                                    <p t-esc="xml.Complemento.Pagos.Pago.get('FechaPago')"></p>
+                                    <p t-esc="xml.Complemento.Pagos10.get('FechaPago')"></p>
                                 </td>
                             </tr>
                         </thead>
                     </table>
-                    <!--<table class="table table-sm">
-                        <thead>
-                            <tr>
-                                <th><span>Invoice Date</span></th>
-                                <th><span>Invoice Number</span></th>
-                                <th class="text-right"><span>Original Amount</span></th>
-                                <th class="text-right"><span>Amount Paid</span></th>
-                                <th class="text-right"><span>Balance</span></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr t-foreach="o.reconciled_invoice_ids" t-as="inv">
-                                <td><span t-field="inv.date_invoice"/></td>
-                                <td><span t-field="inv.number"/></td>
-                                <td class="text-right"><span t-field="inv.amount_total"/></td>
-                                <td class="text-right"><span t-esc="o._get_invoice_payment_amount(inv)" t-options="{'widget': 'monetary', 'display_currency': inv.currency_id}"/></td>
-                                <td class="text-right"><span t-field="inv.residual"/></td>
-                            </tr>
-                        </tbody>
-                    </table>-->
                 </div>
             </t>
         </xpath>
