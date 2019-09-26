@@ -4,8 +4,8 @@
         <xpath expr="//t[@t-call='web.external_layout']" position="replace">
             <t t-call="web.basic_layout">
                 <t t-set="xml" t-value="o.l10n_mx_edi_get_xml_etree()"/> 
-                <t t-set="tfd" t-value="o.l10n_mx_edi_get_tfd_etree(xml)"/>
-                <t t-set="pago" t-value="o.l10n_mx_edi_get_pago_etree(xml)" />
+                <t t-set="comp" t-value="xml.Complemento"/>
+                <t t-set="tdf" t-value="o.l10n_mx_edi_get_pago_etree(xml)" />
             	<div class="header">     
                     <div style="width:100%;">
                         <table class="table" style="border-top:6px solid #F77B22;" border="0">
@@ -178,12 +178,15 @@
                     <br/><br/>
                     <table class="table table-sm">
                         <thead>
-                            <tr style="background:#f1f1f1;">
-                                <td>
-                                    <strong>Fecha</strong>
-                                    <span t-esc="pago.get('FechaPago')"/>
-                                </td>
-                            </tr>
+                            <t t-forgeach="o_related" t-as="inv">
+                                <tr style="background:#f1f1f1;">
+                                    <td>
+                                        <strong>Fecha</strong>
+                                        <br/>
+                                        <span t-esc="inv.get('FechaPago')"/>
+                                    </td>
+                                </tr>
+                            </t>
                         </thead>
                     </table>
                 </div>
