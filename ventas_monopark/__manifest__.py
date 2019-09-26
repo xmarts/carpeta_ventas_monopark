@@ -27,7 +27,6 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'views/data.xml',
         'report/report_cot.xml',
         'report/report_pago.xml',
     ],
