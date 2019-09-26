@@ -119,6 +119,72 @@
                 <br/>
             <t t-set="o" t-value="o.with_context({'lang': lang})"/>
             <div class="page">
+                <br/>
+                    <br/>
+                    <div id="informations" class="row mt32 mb32" style="border-bottom:6px solid #F77B22;">
+                        <div class="col-auto mw-100 mb-4" t-if="xml.Receptor.get('Nombre')" name="receptor" style="font-size:10pt;">
+                            <strong>Receptor</strong>
+                            <br/>
+                            <span t-esc="xml.Receptor.get('Nombre')"/>
+                            <br/>
+                            <span>RFC: <span t-esc="xml.Receptor.get('Rfc')"/> </span>
+                            <t t-if="o.partner_id.street_name">
+                                <span t-field="o.partner_id.street_name" />
+                            </t>
+                            <t t-if="o.partner_id.street_number">
+                                <span>No. <span t-field="o.partner_id.street_number" /> </span>
+                            </t>
+                            <t t-if="o.partner_id.l10n_mx_edi_colony">
+                                <span>Col. <span t-field="o.partner_id.l10n_mx_edi_colony" /> </span>
+                            </t>
+                            <br/>
+                            <t t-if="o.partner_id.zip">
+                                <span>CP. <span t-field="o.partner_id.zip" /> </span>
+                            </t>
+                            <t t-if="o.partner_id.city">
+                                <span t-field="o.partner_id.city" />
+                                <span t-field="o.partner_id.state_id.name" />
+                                <span t-field="o.partner_id.country_id.name" />
+                            </t>
+                            <br/>
+                            <t t-if="o.partner_id.phone">
+                                <span>Tel. <span t-field="o.partner_id.phone" /> </span>
+                            </t>
+                        </div>
+                        <div class="col-auto mw-100 mb-2" t-if="o.partner_id.property_account_position_id or xml.get('Fecha') or o.l10n_mx_edi_usage" style="font-size:10pt;">
+                            <t t-if="o.partner_id.property_account_position_id">
+                                <strong>Régimen Fiscal</strong>
+                                <br/>
+                                <span t-field="o.partner_id.property_account_position_id"/>
+                                <br/>
+                            </t>
+                            
+                            <t t-if="xml.get('Fecha')">
+                                <strong>Fecha</strong>
+                                <br/>
+                                <span t-esc="xml.get('Fecha')"/>
+                                <br/>
+                            </t>
+                            
+                            <t t-if="o.l10n_mx_edi_usage">
+                                <strong>Uso CFDI</strong>
+                                <br/>
+                                <span t-field="o.l10n_mx_edi_usage"/>
+                            </t>
+                        </div>
+
+                        <div class="col-auto mw-100 mb-4" t-if="xml.get('LugarExpedicion')" style="font-size:10pt;">
+                            <t t-if="xml.get('LugarExpedicion')">
+                                <strong>Lugar de Expedición</strong>
+                                <br/>
+                                <span t-esc="xml.get('LugarExpedicion')"/>
+                                <br/>
+                            </t>
+                            <strong>Efecto de comprobante</strong>
+                            <br/>
+                            <span>Pago</span>
+                        </div>
+                    </div>
                 <table class="table table-sm">
                     <thead>
                         <tr>
