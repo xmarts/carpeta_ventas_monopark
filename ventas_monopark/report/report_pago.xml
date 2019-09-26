@@ -205,7 +205,7 @@
                                     <td><span t-esc="var.get('ValorUnitario')"/></td>
                                     <td><span t-esc="var.get('Importe')"/></td>
                                 </tr>
-
+                            </t>
                         </tbody>
                     </table>
                     <!--<table class="table table-sm">
