@@ -186,7 +186,7 @@
                     </div>
                     <table class="table table-sm">
                         <thead>
-                            <tr>
+                            <tr style="background:#f1f1f1;">
                                 <th><span>Cantidad</span></th>
                                 <th><span>Cve Unidad</span></th>
                                 <th><span>Cve SAT</span></th>
@@ -216,6 +216,17 @@
                                     <td><span t-esc="xml.Conceptos.Concepto.get('Importe')"/></td>
                                 </tr>
                         </tbody>
+                    </table>
+                    <br/><br/>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr style="background:#f1f1f1;">
+                                <td>
+                                    <strong>Fecha</strong>
+                                    <p t-esc="xml.Complemento.Pagos.Pago.get('FechaPago')"></p>
+                                </td>
+                            </tr>
+                        </thead>
                     </table>
                     <!--<table class="table table-sm">
                         <thead>
