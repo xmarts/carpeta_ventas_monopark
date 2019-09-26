@@ -2,9 +2,10 @@
 <odoo>
     <template id="report_payment_receipt_document_inherit" inherit_id="account.report_payment_receipt_document">
         <xpath expr="//t[@t-call='web.external_layout']" position="replace">
-        	<div class="header">
-                <t t-set="xml" t-value="o.l10n_mx_edi_get_xml_etree()"/> 
-                <t t-set="tfd" t-value="o.l10n_mx_edi_get_tfd_etree(xml)"/>
+        	<div class="header"> 
+                    
+                    <t t-set="xml" t-value="o.l10n_mx_edi_get_xml_etree()"/> 
+                    
                     <div style="width:100%;">
                         <table class="table" style="border-top:6px solid #F77B22;" border="0">
                             <tr>
@@ -12,6 +13,7 @@
                                 	 <img t-attf-src="data:image/*;base64,{{o.company_id.logo}}" style="max-height:80px;max-width:120px;"/> 
                                 </td>
                                 <td style="width:50%;padding:4px;background:#f1f1f1;font-size:9pt;">
+                                    <t t-if="xml">
                                     <div class="text-center">
                                         <table style="width:90%;">
                                             <tr>
@@ -91,6 +93,7 @@
                 
                                         </table>
                                     </div>
+                                    </t>
                                     <div class="text-center">
                                         <span style="width:100%;color:#F77B22;text-align:center;">CRISTÓBAL FRANCISCO DUEÑEZ BARBA</span><br/>
                                         <span t-if="o.company_id.email"><span t-field="o.company_id.email"/></span>
