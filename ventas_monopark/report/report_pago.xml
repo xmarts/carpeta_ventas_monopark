@@ -181,7 +181,7 @@
                             <tr style="background:#f1f1f1;">
                                 <td>
                                     <strong>Fecha</strong>
-                                    <p t-esc="pago.get('MonedaP')"></p>
+                                    <span t-esc="pago.get('FechaPago')"/>
                                 </td>
                             </tr>
                         </thead>
