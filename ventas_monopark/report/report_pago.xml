@@ -187,6 +187,28 @@
                     <table class="table table-sm">
                         <thead>
                             <tr>
+                                <th><span>Cantidad</span></th>
+                                <th><span>Cve Unidad</span></th>
+                                <th><span>Cve SAT</span></th>
+                                <th><span>Descripción</span></th>
+                                <th><span>Precio UNitario</span></th>
+                                <th><span>Importe</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span t-esc="xml.Conceptos.Concepto.get('Cantidad')"/></td>
+                                <td><span>1</span></td>
+                                <td><span>2</span></td>
+                                <td><span>3</span></td>
+                                <td><span>4</span></td>
+                                <td><span>5</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--<table class="table table-sm">
+                        <thead>
+                            <tr>
                                 <th><span>Invoice Date</span></th>
                                 <th><span>Invoice Number</span></th>
                                 <th class="text-right"><span>Original Amount</span></th>
@@ -203,7 +225,7 @@
                                 <td class="text-right"><span t-field="inv.residual"/></td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table>-->
                 </div>
             </t>
         </xpath>
