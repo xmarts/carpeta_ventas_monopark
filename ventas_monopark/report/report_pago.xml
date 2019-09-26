@@ -122,11 +122,11 @@
                                 <br/>
                             </t>
                             
-                            <t t-if="xml.Receptor.get('UsoCFDI')">
+                            <!--<t t-if="xml.Receptor.get('UsoCFDI')">
                                 <strong>Uso CFDI</strong>
                                 <br/>
                                 <span t-field="xml.Receptor.get('UsoCFDI')"/>
-                            </t>
+                            </t>-->
                         </div>
 
                         <div class="col-auto mw-100 mb-2" t-if="xml.get('LugarExpedicion')" style="font-size:10pt;">
