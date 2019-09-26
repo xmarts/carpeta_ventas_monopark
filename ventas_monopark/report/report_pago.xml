@@ -3,7 +3,7 @@
     <template id="report_payment_receipt_document_inherit" inherit_id="account.report_payment_receipt_document">
         <xpath expr="//t[@t-call='web.external_layout']" position="replace">
         	<div class="header">
-                <t t-set="xml" t-value="docs.l10n_mx_edi_get_xml_etree()"/> 
+                <t t-set="xml" t-value="o.l10n_mx_edi_get_xml_etree()"/> 
                 <t t-set="tfd" t-value="o.l10n_mx_edi_get_tfd_etree(xml)"/>
                     <div style="width:100%;">
                         <table class="table" style="border-top:6px solid #F77B22;" border="0">
