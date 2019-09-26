@@ -178,7 +178,7 @@
                     <br/><br/>
                     <table class="table table-sm">
                         <thead>
-                            <t t-forgeach="o_related" t-as="inv">
+                            <t t-forgeach="docs_related" t-as="inv">
                                 <tr style="background:#f1f1f1;">
                                     <td>
                                         <strong>Fecha</strong>
