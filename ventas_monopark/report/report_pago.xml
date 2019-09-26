@@ -196,7 +196,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <t t-foreach="xml.Conceptos.Concepto" t-as="var">
+                            <!--<t t-foreach="xml.Conceptos.Concepto" t-as="var">
                                 <tr>
                                     <td><span t-esc="var.get('Cantidad')"/></td>
                                     <td><span t-esc="var.get('ClaveUnidad')"/></td>
@@ -205,7 +205,16 @@
                                     <td><span t-esc="var.get('ValorUnitario')"/></td>
                                     <td><span t-esc="var.get('Importe')"/></td>
                                 </tr>
-                            </t>
+                            </t>-->
+
+                                <tr>
+                                    <td><span t-esc="xml.Conceptos.Concepto.get('Cantidad')"/></td>
+                                    <td><span t-esc="xml.Conceptos.Concepto.get('ClaveUnidad')"/></td>
+                                    <td><span>Pendiente</span></td>
+                                    <td><span t-esc="xml.Conceptos.Concepto.get('Descripcion')"/></td>
+                                    <td><span t-esc="xml.Conceptos.Concepto.get('ValorUnitario')"/></td>
+                                    <td><span t-esc="xml.Conceptos.Concepto.get('Importe')"/></td>
+                                </tr>
                         </tbody>
                     </table>
                     <!--<table class="table table-sm">
