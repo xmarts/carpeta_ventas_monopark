@@ -186,7 +186,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <span t-esc="tfd.Pago.get('FechaPago')"/>
+                                    <span>Aqui va la fecha</span>
                                 </td>
                             </tr>
                         </thead>
