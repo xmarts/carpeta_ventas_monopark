@@ -3,18 +3,18 @@
     <template id="report_payment_receipt_document_inherit" inherit_id="account.report_payment_receipt_document">
         <xpath expr="//t[@t-call='web.external_layout']" position="replace">
             <t t-call="web.basic_layout">
-                <t t-set="xml" t-value="o.l10n_mx_edi_get_xml_etree()"/> 
+                <t t-set="xml" t-value="o.l10n_mx_edi_get_xml_etree()"/>
                 <t t-set="tfd" t-value="o.l10n_mx_edi_get_tfd_etree(xml)"/>
                 <t t-set="pago" t-value="o.l10n_mx_edi_get_pago_etree(xml)" />
-            	<div class="header">     
+            	<div class="header">
                     <div style="width:100%;">
                         <table class="table" style="border-top:6px solid #F77B22;" border="0">
                             <tr>
-                                <td style="width:50%;padding:4px;" class="text-center">   
-                                	 <img t-attf-src="data:image/*;base64,{{o.company_id.logo}}" style="max-height:80px;max-width:120px;"/> 
+                                <td style="width:50%;padding:4px;" class="text-center">
+                                	 <img t-attf-src="data:image/*;base64,{{o.company_id.logo}}" style="max-height:80px;max-width:120px;"/>
                                 </td>
                                 <td style="width:50%;padding:4px;background:#f1f1f1;font-size:9pt;">
-                                    
+
                                     <div class="text-center">
                                         <table style="width:90%;">
                                             <tr>
@@ -51,7 +51,7 @@
                                             </tr>
                                         </table>
                                     </div>
-                                    
+
                                     <div class="text-center">
                                         <span style="width:100%;color:#F77B22;text-align:center;">CRISTÓBAL FRANCISCO DUEÑEZ BARBA</span><br/>
                                         <span t-if="o.company_id.email"><span t-field="o.company_id.email"/></span>
@@ -69,11 +69,11 @@
                                     <span t-if="o.partner_id.parent_id.name"><span t-field="o.partner_id.parent_id.name"/></span>
                                     <div t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}'/>
                                     <span t-if="o.partner_id.vat"><span t-field="o.partner_id.vat"/></span>
-                                </td>                            
+                                </td>
                             </tr>
-                        </table>    
+                        </table>
                     </div>
-                </div> 
+                </div>
                 <br/>
                 <div class="page">
                     <br/>
@@ -115,14 +115,14 @@
                                 <span t-field="o.partner_id.property_account_position_id"/>
                                 <br/>
                             </t>
-                            
+
                             <t t-if="xml.get('Fecha')">
                                 <strong>Fecha</strong>
                                 <br/>
                                 <span t-esc="xml.get('Fecha')"/>
                                 <br/>
                             </t>
-                            
+
                             <!--<t t-if="xml.Receptor.get('UsoCFDI')">
                                 <strong>Uso CFDI</strong>
                                 <br/>
@@ -181,12 +181,12 @@
                             <tr style="background:#f1f1f1;">
                                 <th>
                                     <strong>Fecha</strong>
-                                    
+
                                 </th>
                             </tr>
                             <tr>
                                 <td>
-                                    <span t-esc="pago.get('FechaPago')"/>
+                                    <span t-esc="tfd.Pago.get('FechaPago')"/>
                                 </td>
                             </tr>
                         </thead>
