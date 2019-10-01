@@ -181,13 +181,8 @@
                             <tr style="background:#f1f1f1;">
                                 <th>
                                     <strong>Fecha</strong>
-
+                                    <p t-esc="p.Pago.get('FechaPago')"/>
                                 </th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span t-esc="p.Pago.get('FechaPago')"/>
-                                </td>
                             </tr>
                         </thead>
                     </table>
