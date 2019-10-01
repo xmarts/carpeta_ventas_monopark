@@ -199,7 +199,7 @@
                                 <td>
                                   <strong>Monto</strong>
                                   <br/>
-                                  <span t-esc="Monto"/>
+                                  <span t-esc="p.Pago.get('Monto')"/>
                                 </td>
                                 <td>
                                   <strong>Tipo cambio</strong>
