@@ -175,7 +175,7 @@
                                 </tr>
                         </tbody>
                     </table>
-                    <br/><br/>
+                    <br/>
                     <table class="table table-sm">
                         <thead>
                             <tr style="background:#f1f1f1;">
@@ -194,7 +194,18 @@
                                 <td>
                                   <strong>Moneda</strong>
                                   <br/>
-                                  <span t-esc="p.Pago.get('FormaDePagoP')"/>
+                                  <span t-esc="p.Pago.get('MonedaP')"/>
+                                </td>
+                                <td>
+                                  <strong>Monto</strong>
+                                  <br/>
+                                  <span t-esc="Monto"/>
+                                </td>
+                                <td>
+                                  <strong>Tipo cambio</strong>
+                                </td>
+                                <td>
+                                  <strong>No. Operacion</strong>
                                 </td>
                             </tr>
                         </thead>
