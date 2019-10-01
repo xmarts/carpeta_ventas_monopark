@@ -179,21 +179,24 @@
                     <table class="table table-sm">
                         <thead>
                             <tr style="background:#f1f1f1;">
-                                <th>
+                                <td>
                                     <strong>Fecha</strong>
                                     <br/>
                                     <span t-esc="p.Pago.get('FechaPago')"/>
-                                </th>
-                                <th>
+                                </td>
+                                <td>
                                     <strong>Forma de pago</strong>
                                     <br/>
-                                    <span t-field="o.l10n_mx_edi_payment_method_id"/>
-                                </th>
-                                <th>
+                                    <t t-set="cod" t-value="p.Pago.get('FormaDePagoP')"/>
+                                    <t t-set="forma" t-value="o.l10n_mx_edi_payment_method_id"/>
+                                    <t t-set="Cadena" t-value="cod - forma"/>
+                                    <span t-esc="Cadena"/>
+                                </td>
+                                <td>
                                   <strong>Moneda</strong>
                                   <br/>
                                   <span t-esc="p.Pago.get('FormaDePagoP')"/>
-                                </th>
+                                </td>
                             </tr>
                         </thead>
                     </table>
