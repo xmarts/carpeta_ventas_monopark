@@ -181,14 +181,18 @@
                             <tr style="background:#f1f1f1;">
                                 <th>
                                     <strong>Fecha</strong>
-                                    <p t-esc="p.Pago.get('FechaPago')"/>
+                                    <br/>
+                                    <span t-esc="p.Pago.get('FechaPago')"/>
                                 </th>
                                 <th>
                                     <strong>Forma de pago</strong>
-                                    <p t-field="o.l10n_mx_edi_payment_method_id"/>
+                                    <br/>
+                                    <span t-field="o.l10n_mx_edi_payment_method_id"/>
                                 </th>
                                 <th>
                                   <strong>Modena</strong>
+                                  <br>
+                                  <span t-esc="p.Pago.get('FormaDePagoP')"/>
                                 </th>
                             </tr>
                         </thead>
