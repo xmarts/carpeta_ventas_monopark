@@ -190,8 +190,8 @@
                                     <span t-field="o.l10n_mx_edi_payment_method_id"/>
                                 </th>
                                 <th>
-                                  <strong>Modena</strong>
-                                  <br>
+                                  <strong>Moneda</strong>
+                                  <br/>
                                   <span t-esc="p.Pago.get('FormaDePagoP')"/>
                                 </th>
                             </tr>
