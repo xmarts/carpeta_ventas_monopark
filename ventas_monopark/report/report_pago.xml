@@ -187,10 +187,9 @@
                                 <td>
                                     <strong>Forma de pago</strong>
                                     <br/>
-                                    <t t-set="cod" t-value="p.Pago.get('FormaDePagoP')"/>
-                                    <t t-set="forma" t-value="o.l10n_mx_edi_payment_method_id"/>
-                                    <t t-set="Cadena" t-value="cod - forma"/>
-                                    <span t-esc="Cadena"/>
+                                    <span t-esc="p.Pago.get('FormaDePagoP')"/>
+                                    <span> - </span>
+                                    <span t-field="o.l10n_mx_edi_payment_method_id"/>
                                 </td>
                                 <td>
                                   <strong>Moneda</strong>
