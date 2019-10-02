@@ -211,11 +211,9 @@
                         </thead>
                     </table>
 
-                    <table style=" border:1px solid gray; width:100%;">
-                        <div class="row" id="complement">                                
-                            <span t-esc="xml.get('SelloCFD')"/>
-                        </div>
-                    </table>
+                    <div>
+                        <span t-esc="tfd.get('SelloCFD')"/>
+                    </div>
                 </div>
             </t>
         </xpath>
