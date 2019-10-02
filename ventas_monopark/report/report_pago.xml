@@ -54,7 +54,7 @@
 
                                     <div class="text-center">
                                         <span style="width:100%;color:#F77B22;text-align:center;">CRISTÓBAL FRANCISCO DUEÑEZ BARBA</span><br/>
-                                        <span t-if="o.company_id.email"><span t-field="o.company_id.email"/></span>
+                                        <span>auxiliar@monopark.com.mx</span>
                                     </div>
                                 </td>
                             </tr>
@@ -122,12 +122,11 @@
                                 <span t-esc="xml.get('Fecha')"/>
                                 <br/>
                             </t>
-
-                            <!--<t t-if="xml.Receptor.get('UsoCFDI')">
+                            <t t-if="xml.Receptor.get('UsoCFDI')">
                                 <strong>Uso CFDI</strong>
                                 <br/>
                                 <span t-field="xml.Receptor.get('UsoCFDI')"/>
-                            </t>-->
+                            </t>
                         </div>
 
                         <div class="col-auto mw-100 mb-2" t-if="xml.get('LugarExpedicion')" style="font-size:10pt;">
