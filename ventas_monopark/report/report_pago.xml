@@ -125,7 +125,7 @@
                             <t t-if="xml.Receptor.get('UsoCFDI')">
                                 <strong>Uso CFDI</strong>
                                 <br/>
-                                <span t-field="xml.Receptor.get('UsoCFDI')"/>
+                                <span t-esc="xml.Receptor.get('UsoCFDI')"/>
                             </t>
                         </div>
 
