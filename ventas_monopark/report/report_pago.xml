@@ -210,6 +210,55 @@
                             </tr>
                         </thead>
                     </table>
+
+                    <table style=" border:1px solid gray; width:100%;">
+
+                      <t t-if="o.l10n_mx_edi_cfdi_uuid">
+                      <div class="row" id="complement">
+                          <div class="complement-details col-9">
+                                <span>
+                                    <strong>
+                                      Sello digital del emisor:
+                                    </strong>
+                                    <div style="margin:0px; padding:0px;">
+                                      <span t-esc="xml.get('sello', xml.get('Sello', 'No identificado'))"/>
+                                    </div>
+                                  </span>
+                                <span>
+                                    <strong>
+                                      Sello digital de SAT
+                                    </strong>
+                                    <div style="margin:0px; padding:0px;">
+                                      <span t-esc="tfd.get('selloSAT', tfd.get('SelloSAT', 'No identificado'))"/>
+                                    </div>
+                                  </span>
+                                <span>
+                                    <strong>
+                                      Cadena original del complemento del certificado digital del SAT
+                                    </strong>
+                                    <div style="margin:0px; padding:0px;">
+                                      <span class="nowrap" t-esc="tfd_original_string"/>
+                                    </div>
+                                  </span>
+                              <div t-if="xml.Emisor.xpath('cfdi:ExpedidoEn', namespaces=xml.nsmap)" class="">
+                                    <span>
+                                    <strong>
+                                      Emitido en
+                                    </strong>
+                                    <div style="margin:0;" t-if="xml.Emisor.xpath('cfdi:ExpedidoEn', namespaces=xml.nsmap)" class="digital-stamp-content">
+                                        <span t-esc="' | '.join([ '%s: %s' % (key, value) for key, value in xml.Emisor.ExpedidoEn.items()])"/>
+                                    </div>
+                                  </span>
+                              </div>
+                          </div>
+                          <div class="barcode col-3">
+                              <t t-set="sello" t-value="xml.get('Sello', 'No identificado')[-8:]"/>
+                              <img style="height:140px; width:140px;" alt="Barcode" t-att-src="'/report/barcode/?type=QR&amp;value=%s' % quote_plus(                             'https://verificacfdi.facturaelectronica.sat.gob.mx/default.aspx?' + keep_query(                                 re=o.l10n_mx_edi_cfdi_supplier_rfc, rr=o.l10n_mx_edi_cfdi_customer_rfc,                                 tt=o.l10n_mx_edi_cfdi_amount, id=o.l10n_mx_edi_cfdi_uuid)                                 + '&amp;fe=%s' % quote_plus(sello, 'utf-8', 'strict', '=/').replace('%2B', '+'))"/>
+                          </div>
+                      </div>
+                    </t>
+
+                </table>
                 </div>
             </t>
         </xpath>
