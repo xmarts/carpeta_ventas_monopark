@@ -66,9 +66,9 @@
                                     <b><span t-field="o.l10n_mx_edi_cfdi_uuid"/></b>
                                 </td>
                                 <td style="width:50%;padding:4px;background:#F77B22;color:#fff;font-size:10pt;border-left:1px solid #fff">
-                                    <span t-if="o.partner_id.parent_id.name"><span t-field="o.partner_id.parent_id.name"/></span>
-                                    <div t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}'/>
-                                    <span t-if="o.partner_id.vat"><span t-field="o.partner_id.vat"/></span>
+                                    <!--<span t-if="o.partner_id.parent_id.name"><span t-field="o.partner_id.parent_id.name"/></span>-->
+                                    <div t-field="company.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+                                    <!--<span t-if="o.partner_id.vat"><span t-field="o.partner_id.vat"/></span>-->
                                 </td>
                             </tr>
                         </table>
@@ -153,25 +153,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!--<t t-forgeach="xml.Conceptos.Concepto" t-as="var">
-                                <tr>
-                                    <td><span t-esc="var.get('Cantidad')"/></td>
-                                    <td><span t-esc="var.get('ClaveUnidad')"/></td>
-                                    <td><span>Pendiente</span></td>
-                                    <td><span t-esc="var.get('Descripcion')"/></td>
-                                    <td><span t-esc="var.get('ValorUnitario')"/></td>
-                                    <td><span t-esc="var.get('Importe')"/></td>
-                                </tr>
-                            </t>-->
-
-                                <tr>
-                                    <td><span t-esc="xml.Conceptos.Concepto.get('Cantidad')"/></td>
-                                    <td><span t-esc="xml.Conceptos.Concepto.get('ClaveUnidad')"/></td>
-                                    <td><span>Pendiente</span></td>
-                                    <td><span t-esc="xml.Conceptos.Concepto.get('Descripcion')"/></td>
-                                    <td><span t-esc="xml.Conceptos.Concepto.get('ValorUnitario')"/></td>
-                                    <td><span t-esc="xml.Conceptos.Concepto.get('Importe')"/></td>
-                                </tr>
+                            <tr>
+                                <td><span t-esc="xml.Conceptos.Concepto.get('Cantidad')"/></td>
+                                <td><span t-esc="xml.Conceptos.Concepto.get('ClaveUnidad')"/></td>
+                                <td><span>Pendiente</span></td>
+                                <td><span t-esc="xml.Conceptos.Concepto.get('Descripcion')"/></td>
+                                <td><span t-esc="xml.Conceptos.Concepto.get('ValorUnitario')"/></td>
+                                <td><span t-esc="xml.Conceptos.Concepto.get('Importe')"/></td>
+                            </tr>
                         </tbody>
                     </table>
                     <br/>
