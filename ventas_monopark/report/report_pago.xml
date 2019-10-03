@@ -66,10 +66,19 @@
                                     <b><span t-field="o.l10n_mx_edi_cfdi_uuid"/></b>
                                 </td>
                                 <td style="width:50%;padding:4px;background:#F77B22;color:#fff;font-size:10pt;border-left:1px solid #fff">
-                                    <!--<span t-if="o.partner_id.parent_id.name"><span t-field="o.partner_id.parent_id.name"/></span>
-                                    <div t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}'/>
-                                    <span t-if="o.partner_id.vat"><span t-field="o.partner_id.vat"/></span>-->
-                                    <span t-field="o.company_id.phone"/>
+                                    <strong><span>Monopark</span></strong>
+                                    <br/>
+                                    <span t-field="o.company_id.street"/>
+                                    <span> </span>
+                                    <span t-field="o.company_id.street_number"/>
+                                    <br/>
+                                    <span t-field="o.company_id.zip"/>
+                                    <span> </span>
+                                    <span t-field="o.company_id.city"/>
+                                    <span> </span>
+                                    <span t-field="o.company_id.state_id.code"/>
+                                    <br/>
+                                    <span t-field="o.company_id.country_id"/>
                                 </td>
                             </tr>
                         </table>
