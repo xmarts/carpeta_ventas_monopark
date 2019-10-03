@@ -69,16 +69,21 @@
                                     <strong><span>Monopark</span></strong>
                                     <br/>
                                     <span t-field="o.company_id.street"/>
-                                    <span> </span>
-                                    <span t-field="o.company_id.street_number"/>
+                                    <t>
+                                        <span> Col. <span t-field="o.company_id.l10n_mx_edi_colony"/></span>
+                                    </t>
                                     <br/>
-                                    <span t-field="o.company_id.zip"/>
-                                    <span> </span>
+                                    <t t-if="o.company_id.zip">
+                                        <span> C.P.<span t-field="o.company_id.zip"/></span>
+                                        <span> </span>
+                                    </t>
                                     <span t-field="o.company_id.city"/>
                                     <span> </span>
                                     <span t-field="o.company_id.state_id.code"/>
-                                    <br/>
+                                    <span> </span>
                                     <span t-field="o.company_id.country_id"/>
+                                    <br/>
+                                    <span t-field="o.company_id.phone"/>
                                 </td>
                             </tr>
                         </table>
