@@ -69,7 +69,7 @@
                                     <!--<span t-if="o.partner_id.parent_id.name"><span t-field="o.partner_id.parent_id.name"/></span>
                                     <div t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}'/>
                                     <span t-if="o.partner_id.vat"><span t-field="o.partner_id.vat"/></span>-->
-                                    <div t-field="o.company.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+                                    <div t-field="o.company_id.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
                                 </td>
                             </tr>
                         </table>
