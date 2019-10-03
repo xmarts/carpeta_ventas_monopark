@@ -66,9 +66,10 @@
                                     <b><span t-field="o.l10n_mx_edi_cfdi_uuid"/></b>
                                 </td>
                                 <td style="width:50%;padding:4px;background:#F77B22;color:#fff;font-size:10pt;border-left:1px solid #fff">
-                                    <!--<span t-if="o.partner_id.parent_id.name"><span t-field="o.partner_id.parent_id.name"/></span>-->
-                                    <div t-field="company.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
-                                    <!--<span t-if="o.partner_id.vat"><span t-field="o.partner_id.vat"/></span>-->
+                                    <!--<span t-if="o.partner_id.parent_id.name"><span t-field="o.partner_id.parent_id.name"/></span>
+                                    <div t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}'/>
+                                    <span t-if="o.partner_id.vat"><span t-field="o.partner_id.vat"/></span>-->
+                                    <div t-field="o.company.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
                                 </td>
                             </tr>
                         </table>
