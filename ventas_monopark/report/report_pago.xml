@@ -228,7 +228,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><span t-esc="p.Pago.DoctoRelacionado('Folio')"/></td>
+                                <td><span t-esc="p.Pago.DoctoRelacionado.get('Folio')"/></td>
                                 <td><span /></td>
                                 <td><span /></td>
                                 <td><span /></td>
