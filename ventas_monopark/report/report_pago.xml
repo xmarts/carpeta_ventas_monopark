@@ -213,6 +213,32 @@
                             </tr>
                         </thead>
                     </table>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <td>Folio</td>
+                                <td>IdDocumento</td>
+                                <td>No. Parc</td>
+                                <td>Mét. pago DR</td>
+                                <td>Moneda</td>
+                                <td>Saldo anterior</td>
+                                <td>Pagado</td>
+                                <td>Saldo insoluto</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span t-esc="p.DoctoRelacionado('Folio')"/></td>
+                                <td><span /></td>
+                                <td><span /></td>
+                                <td><span /></td>
+                                <td><span /></td>
+                                <td><span /></td>
+                                <td><span /></td>
+                                <td><span /></td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <t t-if="o.l10n_mx_edi_cfdi_uuid">
                         <div class="row" id="complement">
                             <div class="barcode col-3">
