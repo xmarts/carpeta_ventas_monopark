@@ -229,13 +229,14 @@
                         <tbody>
                             <tr>
                                 <td><span t-esc="p.Pago.DoctoRelacionado.get('Folio')"/></td>
-                                <td><span /></td>
-                                <td><span /></td>
-                                <td><span /></td>
-                                <td><span /></td>
-                                <td><span /></td>
-                                <td><span /></td>
-                                <td><span /></td>
+                                <td><span t-esc="p.Pago.DoctoRelacionado.get('IdDocumento')"/></td>
+                                <td><span t-esc="p.Pago.DoctoRelacionado.get('NumParcialidad')"/></td>
+                                <td><span t-esc="p.Pago.DoctoRelacionado.get('MetodoDePagoDR')"/></td>
+                                <td><span t-esc="p.Pago.DoctoRelacionado.get('MonedaDR')"/></td>
+                                <td><span t-esc="p.Pago.DoctoRelacionado.get('ImpSaldoAnt')"/></td>
+                                <td><span t-esc="p.Pago.DoctoRelacionado.get('ImpPagado')"/></td>
+                                <td><span t-esc="p.Pago.DoctoRelacionado.get('ImpSaldoInsoluto')"/></td>
+
                             </tr>
                         </tbody>
                     </table>
