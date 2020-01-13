@@ -29,6 +29,7 @@
         'views/templates.xml',
         'report/report_cot.xml',
         'report/report_pago.xml',
+        'report/anexo_ventas.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

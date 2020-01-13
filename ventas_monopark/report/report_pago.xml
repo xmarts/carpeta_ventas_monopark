@@ -155,6 +155,16 @@
                             <br/>
                             <span>Pago</span>
                         </div>
+
+                        <div class="col-auto mw-100 mb-2" t-if="xml.get('LugarExpedicion')" style="font-size:10pt;">
+                            <t t-if="xml.get('LugarExpedicion')">
+                                <strong>Posición fiscal</strong>
+                                <br/>
+                                <span t-field="o.partner_id.property_account_position_id.name"/>
+                                <br/>
+                            </t>
+                           
+                        </div>
                     </div>
                     <table class="table table-sm">
                         <thead>
@@ -171,7 +181,7 @@
                             <tr>
                                 <td><span t-esc="xml.Conceptos.Concepto.get('Cantidad')"/></td>
                                 <td><span t-esc="xml.Conceptos.Concepto.get('ClaveUnidad')"/></td>
-                                <td><span>Pendiente</span></td>
+                                <td><span>84111506</span></td>
                                 <td><span t-esc="xml.Conceptos.Concepto.get('Descripcion')"/></td>
                                 <td><span t-esc="xml.Conceptos.Concepto.get('ValorUnitario')"/></td>
                                 <td><span t-esc="xml.Conceptos.Concepto.get('Importe')"/></td>
