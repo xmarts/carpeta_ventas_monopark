@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
   <odoo>
-  	<template id="report_anexo_ventas_monopark" inherit_id="sale.report_saleorder_document">
+  	<template id="report_anexo_ventas_monopark" inherit_id="ventas_monopark.reporte_cot_anexo">
   		<xpath expr="//div[@class='page']" position="inside">
 			<div  style="page-break-before:always;"></div>
   				<div class="row" >
