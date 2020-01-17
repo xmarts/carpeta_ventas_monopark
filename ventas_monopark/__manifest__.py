@@ -29,7 +29,7 @@
         'views/templates.xml',
         'report/report_cot.xml',
         'report/report_pago.xml',
-        'report/anexo_ventas.xml',
+        #'report/anexo_ventas.xml',
         'report/pedido_confirmado.xml',
         'report/layout.xml',
         'report/rep_cot_anexo.xml',
