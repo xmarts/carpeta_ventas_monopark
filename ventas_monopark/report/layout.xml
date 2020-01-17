@@ -5,7 +5,7 @@
                 id="action_imp_report"
                 model="sale.order"
                 name="ventas_monopark.rep_cot"
-                file="ventas_monopark.rep_cot"
+                file="ventas_monopark.pedido_confirmado"
                 report_type="qweb-pdf"
                 print_report_name="'Reporte - %s' % object.name"
             />
