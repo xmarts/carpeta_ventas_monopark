@@ -62,8 +62,8 @@
                                 <td>
                                     <t t-if="doc.user_id.login">
                                         <strong>Asesor:</strong>
-                                        <p t-field="doc.user_id.login"/>
                                         <p t-field="doc.user_id.name"/>
+                                        <p t-field="doc.user_id.login"/>
                                     </t> 
                                 </td>
                                 <td>
