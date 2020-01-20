@@ -135,4 +135,8 @@ class PrickingStock(models.Model):
              " * Waiting: if it is not ready to be sent because the required products could not be reserved.\n"
              " * Ready: products are reserved and ready to be sent. If the shipping policy is 'As soon as possible' this happens as soon as anything is reserved.\n"
              " * Done: has been processed, can't be modified or cancelled anymore.\n"
-             " * Cancelled: has been cancelled, can't be confirmed anymore.")				
+             " * Cancelled: has been cancelled, can't be confirmed anymore.")
+class checkbox(models.Model):
+	_inherit="product.pricelist"
+
+	tipotarifa=fields.Boolean(string="¿Es tarifa publica?")
