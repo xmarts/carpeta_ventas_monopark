@@ -40,12 +40,12 @@
                                         <p t-field="doc.instalacion"/>         
                                     </t>
                                 </td>
-                                <!--<td>
-                                    <t t-if="doc.proyecto_sale" >
-                                        <strong style="font-size:23px;">Proyecto:</strong>
-                                        <p style="font-size:23px;" t-field="doc.proyecto_sale"/>
+                                <td>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'USD'" >
+                                        <strong>Moneda:</strong>
+                                        <p t-field="doc.pricelist_id.currency_id.name"/>
                                     </t>
-                                </td>-->
+                                </td>
                             </tr>
                             <tr>
                                 <td>
@@ -243,25 +243,25 @@
                             </div>
                         </div>
                         <br/>
-                        <div style=" margin-top:50px">
+                         <div style=" margin-top:50px">
                             <h3> Condiciones de venta </h3>
                             <ul class="list-inline mb4">
-                                <li t-if="doc.pago_importacion" class="list-inline-item">Pago importacion: <span t-field="doc.pago_importacion"/></li>
+                                <li t-if="doc.pago_importacion" class="list-inline-item">Pago importacion: <strong t-field="doc.pago_importacion"/></li>
                             </ul>
                             <ul class="list-inline mb4">
-                                <li t-if="doc.entrega" class="list-inline-item">Tiempo de entrega: <span t-field="doc.entrega"/></li>
+                                <li t-if="doc.entrega" class="list-inline-item">Tiempo de entrega: <strong t-field="doc.entrega"/></li>
                             </ul>
                              <ul class="list-inline mb4">
-                                <li t-if="doc.nota_venta" class="list-inline-item">Nota: <span t-field="doc.nota_venta"/></li>
+                                <strong t-if="doc.nota_venta" class="list-inline-item">Nota: <span t-field="doc.nota_venta"/></strong>
                             </ul>
-                            <p t-field="doc.note"/>
-                            <p t-if="doc.payment_term_id.note">
-                                <span t-field="doc.payment_term_id.note"/>
-                            </p>
+                            <strong t-field="doc.note"/>
+                            <strong t-if="doc.payment_term_id.note">
+                                <strong t-field="doc.payment_term_id.note"/>
+                            </strong>
                         </div>
 
                         <div class="col-lg-12">
-                            <strong>Observaciones:</strong>
+                            <span>Observaciones:</span>
                             <t t-foreach="doc.observaciones" t-as="line">
                                 <p><b t-field="line.name"/><span>: </span><span t-field="line.description"/></p>   
                             </t>
