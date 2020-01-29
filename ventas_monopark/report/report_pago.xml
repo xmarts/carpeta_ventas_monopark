@@ -212,7 +212,7 @@
                                 <td>
                                   <strong>Monto</strong>
                                   <br/>
-                                  <span t-esc="p.Pago.get('Monto')"/>
+                                  <span>$</span><span t-esc="'{0:,.2f}'.format(float(p.Pago.get('Monto')))"/>
                                 </td>
                                 <td>
                                   <strong>Tipo cambio</strong>
@@ -231,9 +231,9 @@
                                 <td>No. Parc</td>
                                 <td>Mét. pago DR</td>
                                 <td>Moneda</td>
-                                <td>Saldo anterior</td>
-                                <td>Pagado</td>
-                                <td>Saldo insoluto</td>
+                                <td>Saldo anterior  </td>
+                                <td>Pagado  </td>
+                                <td>Saldo insoluto  </td>
                             </tr>
                         </thead>
                         <tbody>
@@ -243,10 +243,17 @@
                                 <td><span t-esc="p.Pago.DoctoRelacionado.get('NumParcialidad')"/></td>
                                 <td><span t-esc="p.Pago.DoctoRelacionado.get('MetodoDePagoDR')"/></td>
                                 <td><span t-esc="p.Pago.DoctoRelacionado.get('MonedaDR')"/></td>
-                                <td><span t-esc="p.Pago.DoctoRelacionado.get('ImpSaldoAnt')"/></td>
-                                <td><span t-esc="p.Pago.DoctoRelacionado.get('ImpPagado')"/></td>
-                                <td><span t-esc="p.Pago.DoctoRelacionado.get('ImpSaldoInsoluto')"/></td>
-
+                                <td style="font-size:11pt;"> 
+                                <span>$</span>
+                                <span t-esc="'{:,.2f}'.format(float(p.Pago.DoctoRelacionado.get('ImpSaldoAnt')))"/>
+                                </td>
+                                <td style="font-size:11pt;">
+                                <span>$</span><span t-esc="'{:,.2f}'.format(float(p.Pago.DoctoRelacionado.get('ImpPagado')))"/>
+                                </td>
+                                <td style="font-size:11pt;">
+                                <span>$</span>
+                                <span t-esc="'{:,.2f}'.format(float(p.Pago.DoctoRelacionado.get('ImpSaldoInsoluto')))"/>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
