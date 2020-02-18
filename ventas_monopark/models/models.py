@@ -57,6 +57,7 @@ class ReportCot(models.Model):
 	nota_venta = fields.Char(string="Nota", default="Precios sujetos a cambio sin previo aviso")
 	comentarios = fields.Char(string="Comentarios")
 	proyecto = fields.Char(string="Proyecto")
+	aditional_comment = fields.Text(string="Comentarios adicionales")
 
 	@api.one
 	def _opportunity_in_proyecto(self):

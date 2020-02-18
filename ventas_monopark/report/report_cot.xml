@@ -54,6 +54,12 @@
                                         <p t-field="doc.entrega"/>
                                     </t>
                                 </td>
+                                <td>
+                                    <t t-if="doc.aditional_comment"  >
+                                        <strong>Comentarios adicionales</strong>
+                                        <p t-field="doc.aditional_comment"/>
+                                    </t>
+                                </td>
                                 <!--<td>
                                     <t t-if="doc.user_id"  >
                                         <strong>Asesor Comercial:</strong>
@@ -110,7 +116,7 @@
                                         </t>
                                     </t>
                                     <t t-if="validate == 1">
-                                        <th class="text-right" style="font-size:9pt;">Precio especial unitario</th>
+                                        <th class="text-right" style="font-size:9pt;">Precio unitario especial</th>
                                     </t>
                                     
                                     <th class="text-right" style="font-size:9pt;">
@@ -286,6 +292,7 @@
                     <div class="oe_structure"/>
                 </div>
             </xpath>
+            
         </template>
     </data>
 </odoo>
