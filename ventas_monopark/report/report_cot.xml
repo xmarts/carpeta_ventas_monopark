@@ -262,10 +262,12 @@
                             </ul>
                              <br/>
                             <strong t-field="doc.note"/>
+                            <br/>
                             <strong t-if="doc.payment_term_id.note">
                                 <strong t-field="doc.payment_term_id.note"/>
                             </strong>
                         </div>
+                        <br/>
 
                         <div class="col-lg-12">
                             <span>Observaciones:</span>
