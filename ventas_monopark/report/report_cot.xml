@@ -260,6 +260,7 @@
                              <ul class="list-inline mb4">
                                 <strong t-if="doc.nota_venta" class="list-inline-item">Nota: <span t-field="doc.nota_venta"/></strong>
                             </ul>
+                             <br/>
                             <strong t-field="doc.note"/>
                             <strong t-if="doc.payment_term_id.note">
                                 <strong t-field="doc.payment_term_id.note"/>
