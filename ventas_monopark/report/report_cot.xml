@@ -519,37 +519,37 @@
                               <img t-attf-src="data:image/*;base64,{{doc.company_id.logo}}" style="width:120px;" />
                         </div>
                         <br/>
-                        <br/>
+                        
                         <span align="justify" style="font-size:7pt; font-family:roman;">Nombre:   
                             <span align="justify" style="font-size:7pt; font-family:roman;" t-field="doc.partner_id.name"/>
                         </span>
                         <br/>
-                        <br/>
+                        
                         <span align="justify" style="font-size:7pt; font-family:roman;">Nombre del representante legal:  
                             <span align="justify" style="font-size:7pt; font-family:roman;" t-field="doc.partner_id.parent_id.legal_representative"/>
                         </span>
                         <br/>
-                        <br/>
+                        
                         <span align="justify" style="font-size:7pt; font-family:roman;">Nombre comercial:    
                          <span align="justify" style="font-size:7pt; font-family:roman;" 
                             t-field="doc.partner_id.x_studio_razn_social"/></span>
                         <br/>
-                        <br/>
+                        
                         <span align="justify" style="font-size:7pt; font-family:roman;">Tipo de documento con el que se identifica:    <span align="justify" style="font-size:7pt; font-family:roman;" 
                             t-field="doc.partner_id.type_document"/>
                         </span>
                         <br/>
-                        <br/>
+                        
                         <span align="justify" style="font-size:7pt; font-family:roman;">Número de INE o pasaporte:   <span align="justify" style="font-size:7pt; font-family:roman;" t-field="doc.partner_id.identifier"/></span>
                         <br/>
-                        <br/>
+                        
                         <span align="justify" style="font-size:7pt; font-family:roman;">Ciudad y Edo: <span align="justify" style="font-size:7pt; font-family:roman;" t-field="doc.partner_id.city"/>, <span align="justify" style="font-size:7pt; font-family:roman;" t-field="doc.partner_id.l10n_mx_edi_locality"/> a  <span align="justify" style="font-size:7pt; font-family:roman;" 
                         t-esc="doc.confirmation_date.strftime('%d')"/>  
                         de  <span align="justify" style="font-size:7pt; font-family:roman;" 
                         t-esc="doc.confirmation_date.strftime('%B')"/> 
                          del  <span align="justify" style="font-size:7pt; font-family:roman;" 
                         t-esc="doc.confirmation_date.strftime('%Y')"/> .</span>
-                        <br/><br/><br/><br/>
+                        <br/>
 
 
                         <div t-if="doc.signature"  name="signature">
