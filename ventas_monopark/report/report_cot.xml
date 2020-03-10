@@ -520,24 +520,26 @@
                         </div>
                         <br/>
                         <br/>
-                        <span align="justify" style="font-size:7pt; font-family:roman;">Nombre:   
+                        <span align="justify" style="font-size:7pt; font-family:roman;">Contacto:   
                             <span align="justify" style="font-size:7pt; font-family:roman;" t-field="doc.partner_id.name"/>
                         </span>
                         <br/>
-                        
-                        <span align="justify" style="font-size:7pt; font-family:roman;">Nombre del representante legal:  
-                            <span align="justify" style="font-size:7pt; font-family:roman;" t-field="doc.partner_id.parent_id.legal_representative"/>
-                        </span>
-                        <br/>
-                        
-                        <span align="justify" style="font-size:7pt; font-family:roman;">Nombre comercial:    
+
+                        <span align="justify" style="font-size:7pt; font-family:roman;">Razón Social:    
                          <span align="justify" style="font-size:7pt; font-family:roman;" 
                             t-field="doc.partner_id.x_studio_razn_social"/></span>
                         <br/>
-                        
-                        <span align="justify" style="font-size:7pt; font-family:roman;">Tipo de documento con el que se identifica:    <span align="justify" style="font-size:7pt; font-family:roman;" 
+
+                         <span align="justify" style="font-size:7pt; font-family:roman;">Representante legal o persona Física:  
+                            <span align="justify" style="font-size:7pt; font-family:roman;" t-field="doc.partner_id.parent_id.legal_representative"/>
+                        </span>
+
+                        <br/>
+                    
+                        <span align="justify" style="font-size:7pt; font-family:roman;">Documento con el que se identifica:    <span align="justify" style="font-size:7pt; font-family:roman;" 
                             t-field="doc.partner_id.type_document"/>
                         </span>
+                        
                         <br/>
                         
                         <span align="justify" style="font-size:7pt; font-family:roman;">Número de INE o pasaporte:   <span align="justify" style="font-size:7pt; font-family:roman;" t-field="doc.partner_id.identifier"/></span>
@@ -556,6 +558,7 @@
                             <div >
                                 <strong>Signature</strong>
                             </div>
+                            <br/>
                             <div>
                                 <img t-att-src="image_data_uri(doc.signature)" style="max-height: 3cm; max-width: 6cm;"/>
                             </div>
