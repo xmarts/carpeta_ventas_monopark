@@ -563,7 +563,7 @@
                                 <img t-att-src="image_data_uri(doc.signature)" style="max-height: 3cm; max-width: 6cm;"/>
                             </div>
                             <div class="text-center">
-                                <p t-field="doc.signed_by"/> 
+                                <p t-field="doc.signed_by"/>  
                             </div>
                         </div>
                     </td>
