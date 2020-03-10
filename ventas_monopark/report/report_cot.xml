@@ -542,7 +542,7 @@
                         
                         <span align="justify" style="font-size:7pt; font-family:roman;">Número de INE o pasaporte:   <span align="justify" style="font-size:7pt; font-family:roman;" t-field="doc.partner_id.identifier"/></span>
                         <br/>
-                        <br/>
+                        
                         <span align="justify" style="font-size:7pt; font-family:roman;">Ciudad y Edo: <span align="justify" style="font-size:7pt; font-family:roman;" t-field="doc.partner_id.city"/>, <span align="justify" style="font-size:7pt; font-family:roman;" t-field="doc.partner_id.l10n_mx_edi_locality"/> a  <span align="justify" style="font-size:7pt; font-family:roman;" 
                         t-esc="doc.confirmation_date.strftime('%d')"/>  
                         de  <span align="justify" style="font-size:7pt; font-family:roman;" 
