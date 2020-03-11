@@ -283,7 +283,7 @@
                 <div class="row" t-if="doc.state == 'sale'">
                     <table class="table" border="0" style="line-height:0.8; " >
                     <tr>
-                    <td style="margin-right;width:50%;" class="text-justify">
+                    <td style="margin-right;width:45%;" class="text-justify">
                         <strong style="font-size:7pt; font-family:roman;">CONDICIONES DE PRECIO:</strong>
                         <span align="justify" style="font-size:7pt; font-family:roman;">
                             1. Los precios unitarios no incluyen 16% de IVA y son válidos SOLO en la totalidad de la compra.
@@ -398,13 +398,13 @@
                             acarreos, maniobras, colocación, reservación y costo de grúas, y/o resguardo de los equipos. 
                         </span><br/>
                         <span align="justify" style="font-size:7pt; font-family:roman;">
-                            8. El cliente se obliga a proporcionar las condiciones necesarias para la adecuada recepción, entrega o 
+                            8. El cliente se obliga a proporcionar las condiciones necesarias para la adecuada recepción, entrega o resguardo de los equipos de acuerdo con las especificaciones y condiciones que le indique la 
+                            empresa.
                         </span><br/>
                     </td>
-                    <td style="margin-left;width:50%;" class="text-justify">
+                    <td style="margin-left;width:45%;" class="text-justify">
                         <span align="justify" style="font-size:7pt; font-family:roman;">
-                            resguardo de los equipos de acuerdo con las especificaciones y condiciones que le indique la 
-                            empresa. En caso de incumplimiento, MONOPARK se reserva el derecho de cobrar una penalidad ó el 
+                             En caso de incumplimiento, MONOPARK se reserva el derecho de cobrar una penalidad ó el 
                             equivalente al 100% del valor del flete por entregas en falso, como son: no contar con área de instalación 
                             terminada y limpia, no haya personal quien reciba, domicilio incorrecto.
                         </span><br/>
@@ -492,12 +492,8 @@
                             compradores, administradores, contadores, empleados de toda índole, asesores externos, asistentes o 
                             cualquier tercero de EL CLIENTE, aceptando en su totalidad cada punto del presente contrato.
 
-                        </span><br/>
-                        <div class = 'col-xs-6 text-right' style="padding-top:10px">    
-                              <img t-attf-src="data:image/*;base64,{{doc.company_id.logo}}" style="width:120px;" />
-                        </div>
-                        <br/>
-                        <br/>
+                        </span><br/><br/>
+                        
                         <span align="justify" style="font-size:7pt; font-family:roman;">Contacto:   
                             <span align="justify" style="font-size:7pt; font-family:roman;" t-field="doc.partner_id.name"/>
                         </span>
@@ -541,20 +537,32 @@
                          del  <span align="justify" style="font-size:7pt; font-family:roman;" 
                         t-esc="doc.confirmation_date.strftime('%Y')"/> .</span>
                         <br/><br/>
+                        <div> 
 
+                            <div style="margin-left:1px;"> 
+                                <div t-if="doc.signature"  name="signature">
+                                    <div class="text-center">
+                                        <strong>Signature</strong>
+                                    </div>
+                                    <br/>
+                                    <div class="text-center">
+                                        <img t-att-src="image_data_uri(doc.signature)" style="max-height: 3cm; max-width: 5cm;"/>
+                                    </div>
+                                    <div class="text-center">
+                                        <p t-field="doc.signed_by"/>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-right:1px;">
+                                <div class = 'col-xs-6 text-right' style="margin-top:10px">    
+                                    <img t-attf-src="data:image/*;base64,{{doc.company_id.logo}}" style="width:120px;" />
+                                </div>
+                            </div>
 
-                        <div t-if="doc.signature"  name="signature">
-                            <div >
-                                <strong>Signature</strong>
-                            </div>
-                            <br/>
-                            <div>
-                                <img t-att-src="image_data_uri(doc.signature)" style="max-height: 3cm; max-width: 6cm;"/>
-                            </div>
-                            <div class="text-center">
-                                <p t-field="doc.signed_by"/>  
-                            </div>
                         </div>
+
+                       
+                        
                     </td>
                     </tr>
                     </table>
