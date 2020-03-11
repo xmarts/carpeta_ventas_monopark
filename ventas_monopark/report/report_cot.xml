@@ -527,7 +527,7 @@
 
                         <span align="justify" style="font-size:7pt; font-family:roman;">Razón Social:    
                          <span align="justify" style="font-size:7pt; font-family:roman;" 
-                            t-field="doc.partner_id.x_studio_razn_social"/></span>
+                            t-field="doc.partner_id.parent_id.name"/></span>
                         <br/>
 
                          <span align="justify" style="font-size:7pt; font-family:roman;">Representante legal o persona Física:  
