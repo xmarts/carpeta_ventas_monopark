@@ -551,6 +551,18 @@
                         <div> 
 
                             <div style="margin-left:1px;"> 
+                                <div t-if="doc.signature"  name="signature" style="margin-left:15px;">
+                                    <div class="text-center">
+                                        <strong>Signature</strong>
+                                    </div>
+                                    <br/>
+                                    <div class="text-center">
+                                        <img t-att-src="image_data_uri(doc.signature)" style="max-height: 3cm; max-width: 5cm;"/>
+                                    </div>
+                                    <div class="text-center">
+                                        <span t-field="doc.partner_id.name_of_sign"/><span>  </span><span t-field="doc.partner_id.puesto"/>  
+                                    </div>
+                                </div>
                                
                             </div>
                             <div style="margin-right:1px;">
