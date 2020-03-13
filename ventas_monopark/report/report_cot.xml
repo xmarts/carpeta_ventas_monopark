@@ -199,7 +199,7 @@
                             </tbody>
                         </table>
                         <div class="clearfix">
-                            <div id="total" class="row" name="total">
+                            <div id="total" class="row" name="total" style="margin-right:5px">
                                 <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
                                     <table class="table table-sm">
                                         <tr class="border-black o_subtotal" style="">
@@ -241,7 +241,18 @@
                                 </div>
 
                             </div>
-                           
+                            <div t-if="doc.signature"  name="signature" style="margin-left:25px; margin-top:-98px">
+                                    <div class="text-center">
+                                        <strong>Signature</strong>
+                                    </div>
+                                    <br/>
+                                    <div class="text-center">
+                                        <img t-att-src="image_data_uri(doc.signature)" style="max-height: 3cm; max-width: 5cm;"/>
+                                    </div>
+                                    <div class="text-center">
+                                        <span t-field="doc.partner_id.name_of_sign"/><span>  </span><span t-field="doc.partner_id.puesto"/>  
+                                    </div>
+                                </div>
                         </div>
                         <br/>
                          <div style=" margin-top:50px">
@@ -540,18 +551,7 @@
                         <div> 
 
                             <div style="margin-left:1px;"> 
-                                <div t-if="doc.signature"  name="signature">
-                                    <div class="text-center">
-                                        <strong>Signature</strong>
-                                    </div>
-                                    <br/>
-                                    <div class="text-center">
-                                        <img t-att-src="image_data_uri(doc.signature)" style="max-height: 3cm; max-width: 5cm;"/>
-                                    </div>
-                                    <div class="text-center">
-                                        <p t-field="doc.signed_by"/>  
-                                    </div>
-                                </div>
+                               
                             </div>
                             <div style="margin-right:1px;">
                                 <div class = 'col-xs-6 text-right' style="margin-top:10px">    
