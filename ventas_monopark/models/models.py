@@ -20,6 +20,7 @@ class TiempoEntrega(models.Model):
 
 	name = fields.Char(string="Nombre")
 	description = fields.Char(string="Descripción")
+	cedis_selection = fields.Selection([('occidente','Cedis Occidente'),('centro','Cedis Centro'),('sur','Cedis Sur')],string='Cedis')
 	
 #MODELOS PARA LAS OBSERVACIONES EN EL MODELO DE VENTAS
 class Observaciones(models.Model):
