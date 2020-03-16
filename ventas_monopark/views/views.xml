@@ -73,7 +73,16 @@
         </xpath>
       </field>
     </record>
-
+    <record id="fields_tiempo_entrega_inherit" model="ir.ui.view">
+      <field name="name">fields_tiempo_entrega_inherit</field>
+      <field name="model">stock.picking</field>
+      <field name="inherit_id" ref="stock.view_picking_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//form[1]/sheet[1]/notebook[1]/page[2]/field[@name='move_ids_without_package']/tree[1]/field[@name='product_id']" position="after">
+          <field name="tiempo_entrega_tabla" widget="many2many_tags" options="{'no_create_edit': True}"/>
+        </xpath>
+      </field>
+    </record>
     <record id="check_inherit_form_tarifa" model="ir.ui.view">
       <field name="name">Form.inherit.check</field>
       <field name="model">product.pricelist</field>

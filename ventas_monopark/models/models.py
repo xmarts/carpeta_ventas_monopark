@@ -138,6 +138,12 @@ class PrickingStock(models.Model):
              " * Ready: products are reserved and ready to be sent. If the shipping policy is 'As soon as possible' this happens as soon as anything is reserved.\n"
              " * Done: has been processed, can't be modified or cancelled anymore.\n"
              " * Cancelled: has been cancelled, can't be confirmed anymore.")
+
+class StockMoveInherit(models.Model):
+	_inherit = "stock.move"
+
+	tiempo_entrega_tabla = fields.Many2many('tiempo.entrega', string="Tiempo de entrega", related="sale_line_id.tiempo_entrega_tabla")
+
 class checkbox(models.Model):
 	_inherit="product.pricelist"
 
