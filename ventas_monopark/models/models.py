@@ -29,6 +29,14 @@ class Observaciones(models.Model):
 	name = fields.Char(string="Nombre")
 	description = fields.Text(string="Descripción de la observación")
 
+	@api.multi
+	def name_get(self):
+		result = []
+		for record in self:
+			record_name = str(record.name) + ': ' + str(record.description)
+			result.append((record.id, record_name))
+		return result
+
 #INHERIT EN EL MODELO DE VENTAS, PARA AGREGAR NUEVOS CAMPOS AL MODELO
 class ReportCot(models.Model):
 	_inherit = "sale.order"

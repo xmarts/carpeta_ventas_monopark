@@ -94,5 +94,89 @@
       </field>
     </record>
 
+    <record id="tiempo_entrega_form" model="ir.ui.view">
+      <field name="name">tiempo entrega</field>
+      <field name="model">tiempo.entrega</field>
+      <field name="arch" type="xml">
+        <form>
+          <header></header>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="description"/>
+              <field name="cedis_selection"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    <!--  CAMPOS EN LA VISTA DE ARBOL PARA EL MODELO DE TIEMPOS DE ENTREGA  -->
+    <record id="tiempo_entrega_tree" model="ir.ui.view">
+      <field name="name">Lista tiempo entrega</field>
+      <field name="model">tiempo.entrega</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="description" />
+              <field name="cedis_selection"/>
+        </tree>
+      </field>     
+    </record>
+
+    <record id="action_tiempo_entrega" model="ir.actions.act_window">
+      <field name='name'>Tiempos de entrega</field>
+      <field name='res_model'>tiempo.entrega</field>
+      <field name='view_mode'>tree,form</field>
+    </record>
+    <!--  MENUITEM PARA LA OPCION DE TIEMPOS DE ENTREGA EN EL SUBMENU DE CONFIGURACIONES  -->
+    <menuitem id="menu_tiempo_entrega" name="Tiempos de entrega" parent="sale.menu_sale_config" action="action_tiempo_entrega" sequence="70"/>
+
+    <!--  CAMPOS EN LA VISTA DEL FORMULARIO PARA EL MODELO DE OBSERVACIONES  -->
+    <record id="view_observaciones_form" model="ir.ui.view">
+      <field name="name">Observaciones</field>
+      <field name="model">obser.sale</field>
+      <field name="arch" type="xml">
+        <form>
+          <header></header>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="description"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    <!--  CAMPOS EN LA VISTA DE ARBOL PARA EL MODELO DE OBSERVACIONES  -->
+    <record id="view_observaciones_tree" model="ir.ui.view">
+      <field name="name">Observacines</field>
+      <field name="model">obser.sale</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="action_observaciones" model="ir.actions.act_window">
+      <field name='name'>Observaciones</field>
+      <field name='res_model'>obser.sale</field>
+      <field name='view_mode'>tree,form</field>
+    </record>
+    <!--  MENUITEM PARA LA OPCION DE OBSERVACIONES EN EL SUBMENU DE CONFIGURACIONES -->
+    <menuitem id="menu_observaciones" name="Observaciones" parent="sale.menu_sale_config" action="action_observaciones" sequence="70"/>
+
+    <record id="fields_tiempo_entrega_inherit" model="ir.ui.view">
+      <field name="name">fields_tiempo_entrega_inherit</field>
+      <field name="model">stock.picking</field>
+      <field name="inherit_id" ref="stock.view_picking_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//form[1]/sheet[1]/notebook[1]/page[2]/field[@name='move_ids_without_package']/tree[1]/field[@name='product_id']" position="after">
+          <field name="tiempo_entrega_tabla" widget="many2many_tags" options="{'no_create_edit': True}"/>
+        </xpath>
+      </field>
+    </record>
+
   </data>
 </odoo>
