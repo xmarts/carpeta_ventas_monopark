@@ -250,7 +250,7 @@
                                         <img t-att-src="image_data_uri(doc.signature)" style="max-height: 3cm; max-width: 5cm;"/>
                                     </div>
                                     <div class="text-center">
-                                        <span t-field="doc.partner_id.name_of_sign"/><span>  </span><span t-field="doc.partner_id.puesto"/>  
+                                        <span t-field="doc.partner_id.name_of_sign"/><br/><span t-field="doc.partner_id.puesto"/>  
                                     </div>
                                 </div>
                         </div>
@@ -560,7 +560,7 @@
                                         <img t-att-src="image_data_uri(doc.signature)" style="max-height: 3cm; max-width: 5cm;"/>
                                     </div>
                                     <div class="text-center">
-                                        <span t-field="doc.partner_id.name_of_sign"/><span>  </span><span t-field="doc.partner_id.puesto"/>  
+                                        <span t-field="doc.partner_id.name_of_sign"/><br/><br/><span t-field="doc.partner_id.puesto"/>  
                                     </div>
                                 </div>
                                
