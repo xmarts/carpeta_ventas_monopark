@@ -20,6 +20,7 @@ class TiempoEntrega(models.Model):
 
 	name = fields.Char(string="Nombre")
 	description = fields.Char(string="Descripción")
+	cedis_selection = fields.Selection([('occidente','Cedis Occidente'),('centro','Cedis Centro'),('sur','Cedis Sur')],string='Cedis')
 	
 #MODELOS PARA LAS OBSERVACIONES EN EL MODELO DE VENTAS
 class Observaciones(models.Model):
@@ -27,6 +28,14 @@ class Observaciones(models.Model):
 
 	name = fields.Char(string="Nombre")
 	description = fields.Text(string="Descripción de la observación")
+
+	@api.multi
+	def name_get(self):
+		result = []
+		for record in self:
+			record_name = str(record.name) + ': ' + str(record.description)
+			result.append((record.id, record_name))
+		return result
 
 #INHERIT EN EL MODELO DE VENTAS, PARA AGREGAR NUEVOS CAMPOS AL MODELO
 class ReportCot(models.Model):
@@ -137,6 +146,12 @@ class PrickingStock(models.Model):
              " * Ready: products are reserved and ready to be sent. If the shipping policy is 'As soon as possible' this happens as soon as anything is reserved.\n"
              " * Done: has been processed, can't be modified or cancelled anymore.\n"
              " * Cancelled: has been cancelled, can't be confirmed anymore.")
+
+class StockMoveInherit(models.Model):
+	_inherit = "stock.move"
+
+	tiempo_entrega_tabla = fields.Many2many('tiempo.entrega', string="Tiempo de entrega", related="sale_line_id.tiempo_entrega_tabla")
+
 class checkbox(models.Model):
 	_inherit="product.pricelist"
 
