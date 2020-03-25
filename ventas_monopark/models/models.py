@@ -33,7 +33,7 @@ class Observaciones(models.Model):
 	def name_get(self):
 		result = []
 		for record in self:
-			record_name = str(record.name) + ': ' + str(record.description)
+			record_name = str(record.name)
 			result.append((record.id, record_name))
 		return result
 
