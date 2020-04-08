@@ -291,7 +291,7 @@
                     <div class="oe_structure"/>
                 </div>
                 <div  style="page-break-before:always;"></div>
-                <div class="row" t-if="doc.state == 'sale'">
+                <div class="row" t-if="doc.state == 'sale' or doc.state == 'done' ">
                     <table class="table" border="0" style="line-height:0.8; " >
                     <tr>
                     <td style="margin-right;width:45%;" class="text-justify">
