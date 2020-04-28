@@ -1,7 +1,19 @@
 # -*- coding: utf-8 -*-
+import base64
+from datetime import datetime, date
+from itertools import groupby
+import requests
+from xml.etree import ElementTree
 
-from odoo import models, fields, api
-
+from lxml import etree
+from lxml.objectify import fromstring
+from suds.client import Client
+from odoo import _, api, fields, models
+from odoo.tools import DEFAULT_SERVER_TIME_FORMAT
+from odoo.tools.float_utils import float_compare
+from odoo.tools.misc import html_escape
+from odoo.exceptions import UserError, ValidationError
+#MODELO PARA FACTURAS CONCILIADAS AL PAGO
 class pagos_pagos(models.Model):
 	_inherit = 'account.payment'
 
@@ -14,6 +26,55 @@ class pagos_pagos(models.Model):
 		node = cfdi.Complemento.xpath(attribute, namespaces=namespace)
 		return node[0] if node else None
 
+
+	@api.multi
+	def complemento(self):
+		self.pagos_con = [(5, 0, 0)]
+		data = base64.decodestring(self.l10n_mx_edi_cfdi)
+		root =ElementTree.fromstring(data)
+		#print ("roooooooooooooooooooooooooooot",root)
+		count = 0
+		lista = []
+		cont = 0
+		if count == 0:
+			count += count + 1
+			for child in root.findall('{http://www.sat.gob.mx/cfd/3}Complemento'):
+				for pagos in child:
+					for pago in pagos:
+						for doc in pago:
+							if lista:
+								for i in lista:
+									if i['folio'] != doc.attrib['Folio']:
+										vals = {
+											'folio': doc.attrib['Folio'],
+											'id_documento':doc.attrib['IdDocumento'],
+											'no_parc':doc.attrib['NumParcialidad'],
+											'metodo_de_pago_dr': doc.attrib['MetodoDePagoDR'],
+											'moneda':doc.attrib['MonedaDR'],
+											'saldo_anterior':doc.attrib['ImpSaldoAnt'],
+											'pagado':doc.attrib['ImpPagado'],
+											'saldo_insoluto':doc.attrib['ImpSaldoInsoluto'],
+											'acc_payment':self.id
+										}
+										lista.append(vals)
+							else:
+								if cont == 0:
+									vals = {
+										'folio': doc.attrib['Folio'],
+										'id_documento':doc.attrib['IdDocumento'],
+										'no_parc':doc.attrib['NumParcialidad'],
+										'metodo_de_pago_dr': doc.attrib['MetodoDePagoDR'],
+										'moneda':doc.attrib['MonedaDR'],
+										'saldo_anterior':doc.attrib['ImpSaldoAnt'],
+										'pagado':doc.attrib['ImpPagado'],
+										'saldo_insoluto':doc.attrib['ImpSaldoInsoluto'],
+										'acc_payment':self.id
+									}
+									lista.append(vals)
+									cont = 1
+		return lista
+
+		self.pagos_con.create(lista)
 #MODELO PARA LOS TIEMPOS DE ENTREGA EN EL MODELO DE VENTAS
 class TiempoEntrega(models.Model):
 	_name = "tiempo.entrega"

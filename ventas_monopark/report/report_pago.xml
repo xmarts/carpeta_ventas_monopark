@@ -237,23 +237,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><span t-esc="p.Pago.DoctoRelacionado.get('Folio')"/></td>
-                                <td><span t-esc="p.Pago.DoctoRelacionado.get('IdDocumento')"/></td>
-                                <td><span t-esc="p.Pago.DoctoRelacionado.get('NumParcialidad')"/></td>
-                                <td><span t-esc="p.Pago.DoctoRelacionado.get('MetodoDePagoDR')"/></td>
-                                <td><span t-esc="p.Pago.DoctoRelacionado.get('MonedaDR')"/></td>
-                                <td style="font-size:11pt;"> 
-                                <span>$</span>
-                                <span t-esc="'{:,.2f}'.format(float(p.Pago.DoctoRelacionado.get('ImpSaldoAnt')))"/>
-                                </td>
-                                <td style="font-size:11pt;">
-                                <span>$</span><span t-esc="'{:,.2f}'.format(float(p.Pago.DoctoRelacionado.get('ImpPagado')))"/>
-                                </td>
-                                <td style="font-size:11pt;">
-                                <span>$</span>
-                                <span t-esc="'{:,.2f}'.format(float(p.Pago.DoctoRelacionado.get('ImpSaldoInsoluto')))"/>
-                                </td>
+                            <tr t-foreach="o.complemento()" t-as="r">
+                                <t t-if="r['folio']" >
+                                    <td><span t-esc="r['folio']"/></td>
+                                    <td><span t-esc="r['id_documento']"/></td>
+                                    <td><span t-esc="r['no_parc']"/></td>
+                                    <td><span t-esc="r['metodo_de_pago_dr']"/></td>
+                                    <td><span t-esc="r['moneda']"/></td>
+
+                                    <td style="font-size:11pt;"> 
+                                    <span>$</span>
+                                    <span t-esc="'{:,.2f}'.format(float(r['saldo_anterior']))"/>
+                                    </td>
+                                    <td style="font-size:11pt;">
+                                    <span>$</span><span t-esc="'{:,.2f}'.format(float(r['pagado']))"/>
+                                    </td>
+                                    <td style="font-size:11pt;">
+                                    <span>$</span>
+                                    <span t-esc="'{:,.2f}'.format(float(r['saldo_insoluto']))"/>
+                                    </td>
+                                </t>
                             </tr>
                         </tbody>
                     </table>
