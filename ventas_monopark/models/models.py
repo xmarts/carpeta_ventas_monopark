@@ -143,7 +143,7 @@ class SaleReport(models.Model):
 	_inherit = 'sale.report'
 
 	
-	fecha_meta = fields.Char(string='Fecha Meta',readonly=True)
+	fecha_meta = fields.Date(string='Fecha Meta',readonly=True)
 
 	def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
 		fields['fecha_meta'] = ", s.target_date as fecha_meta"
