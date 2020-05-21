@@ -129,13 +129,32 @@ class ReportCot(models.Model):
 	proyecto = fields.Char(string="Proyecto")
 	aditional_comment = fields.Text(string="Comentarios adicionales")
 
+	advance = fields.Boolean(string="¿Tiene anticipo?")
+	target_date = fields.Date(string="Fecha meta")
+
 	@api.one
 	def _opportunity_in_proyecto(self):
 		for record in self:
 			if record.opportunity_id:
 				record.proyecto_sale_dos = record.opportunity_id.name
 			else:
-				record.proyecto_sale_dos = ""	
+				record.proyecto_sale_dos = ""
+class SaleReport(models.Model):
+	_inherit = 'sale.report'
+
+	
+	fecha_meta = fields.Char(string='Fecha Meta',readonly=True)
+
+	def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
+		fields['fecha_meta'] = ", s.target_date as fecha_meta"
+		# fields['tipo_cliente'] = ", s.tipo_cliente as tipo_cliente"
+		# fields['number_store'] = ", s.number_store as number_store"
+		# fields['sabor'] = ", t.taste_product as sabor"
+		# fields['clase'] = ", t.clase_prod as clase"
+		# fields['presentacion'] = ", t.presentation_prod as presentacion"
+		# fields['marca'] = ", t.brand_product as marca"
+		groupby+=',s.target_date'
+		return super(SaleReport, self)._query(with_clause, fields, groupby, from_clause)
 
 #INHERIT A LA TABLA DE PEDIDO DE VENTA, PARA AGREGAR DOS NUEVAS COLUMNAS
 class ReportCot(models.Model):
