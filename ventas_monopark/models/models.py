@@ -105,7 +105,7 @@ class ReportCot(models.Model):
 	proyecto_sale_dos = fields.Char(string="Proyecto", compute="_opportunity_in_proyecto")
 	cargo_envio = fields.Selection(selection=[
 		('type1', 'Envio por cobrar'),
-		('type2', 'Flete contrado'),
+		('type2', 'Flete contratado'),
 		('type3', 'Por parte del cliente'),
 		('type4', 'Por confirmar'),
 		('type5', 'Otros'),
