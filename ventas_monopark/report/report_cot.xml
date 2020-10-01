@@ -489,12 +489,18 @@
                                             Ciudad y Edo:
                                             <t t-set="coma" t-value=""/>
                                             <t t-if="doc.partner_id.city">
-                                                <t t-if="doc.partner_id.l10n_mx_edi_locality">
-                                                    <t t-set="coma" t-value=","/>
+                                                <t t-set="coma" t-value="str(',')"/>
+                                            </t>
+                                            <t t-if="coma">
+                                                <t t-if="doc.partner_id.city">
+                                                    <span t-esc="str(doc.partner_id.city) + str(coma)"/>
+                                                    <span t-field="doc.partner_id.l10n_mx_edi_locality"/>
                                                 </t>
                                             </t>
-                                            <span t-field="doc.partner_id.city"/><t t-esc="coma"/> 
-                                            <span t-field="doc.partner_id.l10n_mx_edi_locality"/> a  
+                                            <t t-else="">
+                                                <span t-field="doc.partner_id.l10n_mx_edi_locality"/>
+                                            </t>
+                                             a  
                                             <span t-esc="doc.confirmation_date.strftime('%d')"/>  de  
                                             <span t-if="doc.confirmation_date.strftime('%m') == '01' ">Enero</span>
                                             <span t-if="doc.confirmation_date.strftime('%m') == '02' ">Febrero</span>
