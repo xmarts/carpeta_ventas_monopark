@@ -288,14 +288,17 @@
                     <div t-if="doc.state == 'sale' or doc.state == 'done'"
                         style="line-height:0.8;">
                         <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 48%; padding: 5px;">
-                            <div style="width:100%; margin-right;" class="text-justify">
-                                <span align="justify" style="font-size:7pt; font-family:roman;">
+                            <div style="width:100%; margin-right;">
+                                <span align="justify" style="font-size:7pt; font-family:roman;"
+                                    class="text-justify">
                                     <strong>CONTRATO DE COMPRA VENTA AL CONTADO DE PRODUCTO Y/O MOBILIARIO (EN ADELANTE, EL “CONTRATO”)</strong> QUE CELEBRAN, POR UNA PARTE, <strong>CRISTÓBAL FRANCISCO DUEÑEZ BARBA</strong>, EN LO SUCESIVO DENOMINADA COMO <strong>“EL PROVEEDOR” Y/O MONOPARK</strong>, Y POR LA OTRA PARTE, LA PERSONA FÍSICA O MORAL CUYO(S) NOMBRE(S) Y DATOS CONSTAN AL FINAL DEL PRESENTE CONTRATO, EN LO SUCESIVO DENOMINADA COMO <strong>“EL COMPRADOR” (Y EN CONJUNTO CON EL PROVEEDOR COMO “LAS PARTES”),</strong> DE CONFORMIDAD CON LAS SIGUIENTES DEFINICIONES, DECLARACIONES Y CLÁUSULAS:
                                 </span>
-                                <br/>
-                                <strong class="text-center">
-                                    DEFINICIONES
-                                </strong>
+                                <br/><br/>
+                                <div class="text-center">
+                                    <strong>
+                                        DEFINICIONES
+                                    </strong>
+                                </div>
 
 
 
@@ -424,7 +427,20 @@
                           </div>
                         </div>
                         <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 48%; padding: 5px;">
-                            <div style="width:100%; margin-right;" class="text-justify">
+                            <div style="width:100%;">
+                                <span align="justify" style="font-size:7pt; font-family:roman;
+                                    margin-right;" class="text-justify">
+                                    <strong>CONTRATO DE COMPRA VENTA AL CONTADO DE PRODUCTO Y/O MOBILIARIO (EN ADELANTE, EL “CONTRATO”)</strong> QUE CELEBRAN, POR UNA PARTE, <strong>CRISTÓBAL FRANCISCO DUEÑEZ BARBA</strong>, EN LO SUCESIVO DENOMINADA COMO <strong>“EL PROVEEDOR” Y/O MONOPARK</strong>, Y POR LA OTRA PARTE, LA PERSONA FÍSICA O MORAL CUYO(S) NOMBRE(S) Y DATOS CONSTAN AL FINAL DEL PRESENTE CONTRATO, EN LO SUCESIVO DENOMINADA COMO <strong>“EL COMPRADOR” (Y EN CONJUNTO CON EL PROVEEDOR COMO “LAS PARTES”),</strong> DE CONFORMIDAD CON LAS SIGUIENTES DEFINICIONES, DECLARACIONES Y CLÁUSULAS:
+                                </span>
+                                <br/><br/>
+                                <div class="text-center">
+                                    <strong>
+                                        DEFINICIONES
+                                    </strong>
+                                </div>
+                            </div>
+
+                            <!-- <div style="width:100%; margin-right;" class="text-justify"> -->
                                 <!-- <span align="justify" style="font-size:7pt; font-family:roman;">
                                     En caso de incumplimiento, MONOPARK se reserva el derecho de cobrar una penalidad ó el 
                                     equivalente al 100% del valor del flete por entregas en falso, como son: no contar con área de instalación 
@@ -581,7 +597,7 @@
                                         </div>
                                     </div>
                                 </div> -->
-                            </div>
+                            <!-- </div> -->
                         </div>
                     </div>
                 </div>
