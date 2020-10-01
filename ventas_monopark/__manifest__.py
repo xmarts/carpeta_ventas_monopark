@@ -28,7 +28,7 @@
         'views/views.xml',
         'views/templates.xml',
         'views/product_search.xml',
-        'report/report_cot.xml',
+        # 'report/report_cot.xml',
         'report/report_pago.xml',
         #'report/anexo_ventas.xml',
         #'report/pedido_confirmado.xml',
