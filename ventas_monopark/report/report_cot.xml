@@ -286,9 +286,9 @@
                     <div class="oe_structure"/>
                     <div  style="page-break-before:always;"></div>
                     <div t-if="doc.state == 'sale' or doc.state == 'done'"
-                        style="line-height:0.8;">
+                        >
                         <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 48%; padding: 5px;">
-                            <div style="width:100%; margin-right;" class="text-justify">
+                            <div style="width:100%;">
                                 <span align="justify" style="font-size:7pt; font-family:roman;">
                                     <strong>CONTRATO DE COMPRA VENTA AL CONTADO DE PRODUCTO Y/O MOBILIARIO (EN ADELANTE, EL “CONTRATO”)</strong> QUE CELEBRAN, POR UNA PARTE, <strong>CRISTÓBAL FRANCISCO DUEÑEZ BARBA</strong>, EN LO SUCESIVO DENOMINADA COMO <strong>“EL PROVEEDOR” Y/O MONOPARK</strong>, Y POR LA OTRA PARTE, LA PERSONA FÍSICA O MORAL CUYO(S) NOMBRE(S) Y DATOS CONSTAN AL FINAL DEL PRESENTE CONTRATO, EN LO SUCESIVO DENOMINADA COMO <strong>“EL COMPRADOR” (Y EN CONJUNTO CON EL PROVEEDOR COMO “LAS PARTES”),</strong> DE CONFORMIDAD CON LAS SIGUIENTES DEFINICIONES, DECLARACIONES Y CLÁUSULAS:
                                 </span>
@@ -300,7 +300,7 @@
 
 
 
-                                <strong style="font-size:7pt; font-family:roman;">CONDICIONES DE PRECIO:</strong>
+                                <!-- <strong style="font-size:7pt; font-family:roman;">CONDICIONES DE PRECIO:</strong>
                                 <span align="justify" style="font-size:7pt; font-family:roman;">
                                     1. Los precios unitarios no incluyen 16% de IVA y son válidos SOLO en la totalidad de la compra.
                                 </span><br/>
@@ -416,7 +416,7 @@
                                 <span align="justify" style="font-size:7pt; font-family:roman;">
                                     8. El cliente se obliga a proporcionar las condiciones necesarias para la adecuada recepción, entrega o resguardo de los equipos de acuerdo con las especificaciones y condiciones que le indique la 
                                     empresa.
-                                </span><br/>
+                                </span><br/> -->
                             </div>
                         </div>
                         <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 4%; padding: 5px;">
@@ -425,7 +425,7 @@
                         </div>
                         <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 48%; padding: 5px;">
                             <div style="width:100%; margin-right;" class="text-justify">
-                                <span align="justify" style="font-size:7pt; font-family:roman;">
+                                <!-- <span align="justify" style="font-size:7pt; font-family:roman;">
                                     En caso de incumplimiento, MONOPARK se reserva el derecho de cobrar una penalidad ó el 
                                     equivalente al 100% del valor del flete por entregas en falso, como son: no contar con área de instalación 
                                     terminada y limpia, no haya personal quien reciba, domicilio incorrecto.
@@ -580,7 +580,7 @@
                                             <img t-attf-src="data:image/*;base64,{{doc.company_id.logo}}" style="width:120px;" />
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
