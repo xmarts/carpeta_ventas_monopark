@@ -454,22 +454,23 @@
                                     Número de INE o pasaporte: <span t-field="doc.partner_id.identifier"/><br/>
                                     <br/>
                                     Ciudad y Edo:
-                                    <span t-field="doc.partner_id.city"/>, <span t-field="doc.partner_id.l10n_mx_edi_locality"/> a  
+                                    <span t-field="doc.partner_id.city"/>, 
+                                    <span t-field="doc.partner_id.l10n_mx_edi_locality"/> a  
                                     <span t-esc="doc.confirmation_date.strftime('%d')"/>  de  
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '01' "><span align="justify" style="font-size:7pt; font-family:roman;">Enero</span></span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '02' "><span align="justify" style="font-size:7pt; font-family:roman;">Febrero</span></span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '03' "><span align="justify" style="font-size:7pt; font-family:roman;">Marzo</span></span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '04' "><span align="justify" style="font-size:7pt; font-family:roman;">Abril</span></span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '05' "><span align="justify" style="font-size:7pt; font-family:roman;">Mayo</span></span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '06' "><span align="justify" style="font-size:7pt; font-family:roman;">Junio</span></span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '07' "><span align="justify" style="font-size:7pt; font-family:roman;">Julio</span></span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '08' "><span align="justify" style="font-size:7pt; font-family:roman;">Agosto</span></span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '09' "><span align="justify" style="font-size:7pt; font-family:roman;">Septiembre</span></span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '10' "><span align="justify" style="font-size:7pt; font-family:roman;">Octubre</span></span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '11' "><span align="justify" style="font-size:7pt; font-family:roman;">Noviembre</span></span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '12' "><span align="justify" style="font-size:7pt; font-family:roman;">Diciembre</span></span>
-                                     del  <span align="justify" style="font-size:7pt; font-family:roman;" 
-                                    t-esc="doc.confirmation_date.strftime('%Y')"/> .</span>
+                                    <span t-if="doc.confirmation_date.strftime('%m') == '01' ">Enero</span>
+                                    <span t-if="doc.confirmation_date.strftime('%m') == '02' ">Febrero</span>
+                                    <span t-if="doc.confirmation_date.strftime('%m') == '03' ">Marzo</span>
+                                    <span t-if="doc.confirmation_date.strftime('%m') == '04' ">Abril</span>
+                                    <span t-if="doc.confirmation_date.strftime('%m') == '05' ">Mayo</span>
+                                    <span t-if="doc.confirmation_date.strftime('%m') == '06' ">Junio</span>
+                                    <span t-if="doc.confirmation_date.strftime('%m') == '07' ">Julio</span>
+                                    <span t-if="doc.confirmation_date.strftime('%m') == '08' ">Agosto</span>
+                                    <span t-if="doc.confirmation_date.strftime('%m') == '09' ">Septiembre</span>
+                                    <span t-if="doc.confirmation_date.strftime('%m') == '10' ">Octubre</span>
+                                    <span t-if="doc.confirmation_date.strftime('%m') == '11' ">Noviembre</span>
+                                    <span t-if="doc.confirmation_date.strftime('%m') == '12' ">Diciembre</span>
+                                     del 
+                                    <span t-esc="doc.confirmation_date.strftime('%Y')"/>.
                                 </span>
                             </div>
                         </div>
