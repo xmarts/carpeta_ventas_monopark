@@ -495,7 +495,7 @@
                                                     </div>
                                                 </div>
                                                 <div style="float: left; width: 40%;">
-                                                    Fecha: <span t-field="doc.confirmation_date.strftime('%d/%m/%Y')"/>
+                                                    Fecha: <span t-field="doc.confirmation_date.strftime('%d-%m-%Y')"/>
                                                 </div>
                                             </div>
                                         </div>
