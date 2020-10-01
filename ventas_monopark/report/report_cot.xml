@@ -294,19 +294,17 @@
                 <div class="row" t-if="doc.state == 'sale' or doc.state == 'done' ">
                     <table class="table" border="0" style="line-height:0.8; " >
                         <tr>
-                            <td style="margin-right;width:45%; color:black;">
-                                <span align="justify" class="text-justify" style="font-size:9pt; font-family:roman;">
+                            <td style="width:45%; color:black;">
+                                <span align="justify" class="text-justify" style="margin-right;
+                                    font-size:9pt; font-family:roman;">
                                     <strong>CONTRATO DE COMPRA VENTA AL CONTADO DE PRODUCTO Y/O MOBILIARIO (EN ADELANTE, EL “CONTRATO”)</strong> QUE CELEBRAN, POR UNA PARTE, <strong>CRISTÓBAL FRANCISCO DUEÑEZ BARBA</strong>, EN LO SUCESIVO DENOMINADA COMO <strong>“EL PROVEEDOR” Y/O MONOPARK</strong>, Y POR LA OTRA PARTE, LA PERSONA FÍSICA O MORAL CUYO(S) NOMBRE(S) Y DATOS CONSTAN AL FINAL DEL PRESENTE CONTRATO, EN LO SUCESIVO DENOMINADA COMO <strong>“EL COMPRADOR” (Y EN CONJUNTO CON EL PROVEEDOR COMO “LAS PARTES”),</strong> DE CONFORMIDAD CON LAS SIGUIENTES DEFINICIONES, DECLARACIONES Y CLÁUSULAS:
                                 </span>
                                 <br/>
-                                <div>
-                                    <strong style="text-center">
+                                <div style="text-center">
+                                    <strong>
                                         DEFINICIONES
                                     </strong>
                                 </div>
-                                <strong style="text-center">
-                                    DEFINICIONES
-                                </strong>
 
 
 
