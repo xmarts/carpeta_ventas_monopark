@@ -443,101 +443,72 @@
                                     <br/>
                                     Leído que fue por Las partes el contenido del presente Contrato y sabedoras de su alcance legal, se firma.<br/>
                                     <br/>
-                                    <strong>Contacto: </strong> <span t-field="doc.partner_id.name"/><br/>
-                                    <br/>
-                                    Razón Social – Física o Moral: <span t-field="doc.partner_id.parent_id.name"/><br/>
-                                    <br/>
-                                    Representante legal o persona Física: <span t-field="doc.partner_id.parent_id.legal_representative"/><br/>
-                                    <br/>
-                                    Tipo de documento con el que se identifica: <span t-field="doc.partner_id.type_document"/><br/>
-                                    <!-- Número de INE o pasaporte: <span t-field="doc.partner_id.identifier"/><br/>
-                                    <br/>
-                                    Ciudad y Edo:
-                                    <t t-set="coma" t-value=""/>
-                                    <t t-if="doc.partner_id.city">
-                                        <t t-if="doc.partner_id.l10n_mx_edi_locality">
-                                            <t t-set="coma" t-value=","/>
-                                        </t>
-                                    </t>
-                                    <span t-field="doc.partner_id.city"/><t t-esc="coma"/> 
-                                    <span t-field="doc.partner_id.l10n_mx_edi_locality"/> a  
-                                    <span t-esc="doc.confirmation_date.strftime('%d')"/>  de  
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '01' ">Enero</span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '02' ">Febrero</span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '03' ">Marzo</span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '04' ">Abril</span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '05' ">Mayo</span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '06' ">Junio</span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '07' ">Julio</span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '08' ">Agosto</span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '09' ">Septiembre</span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '10' ">Octubre</span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '11' ">Noviembre</span>
-                                    <span t-if="doc.confirmation_date.strftime('%m') == '12' ">Diciembre</span>
-                                     del <span t-esc="doc.confirmation_date.strftime('%Y')"/>
-                                    Nombre: <span t-field="doc.partner_id.name_of_sign"/>
-                                    Firma: <div class="text-center">
-                                        <img t-att-src="image_data_uri(doc.signature)" style="max-height: 3cm; max-width: 5cm;"/>
-                                    </div>
-                                    Fecha: <span t-field="doc.confirmation_date"/> -->
-
-                                    <div style="float: left; width: 60%;">
-                                        <div style="width:100%;">
-                                            <br/>
-                                            Número de INE o pasaporte: <span t-field="doc.partner_id.identifier"/><br/>
-                                            <br/>
-                                            Ciudad y Edo:
-                                            <t t-set="coma" t-value=""/>
-                                            <t t-if="doc.partner_id.city">
-                                                <t t-set="coma" t-value="str(',')"/>
-                                            </t>
-                                            <t t-if="coma">
+                                    <span style="line-height:10px;">
+                                        <strong>Contacto: </strong> <span t-field="doc.partner_id.name"/><br/>
+                                        <br/>
+                                        Razón Social – Física o Moral: <span t-field="doc.partner_id.parent_id.name"/><br/>
+                                        <br/>
+                                        Representante legal o persona Física: <span t-field="doc.partner_id.parent_id.legal_representative"/><br/>
+                                        <br/>
+                                        Tipo de documento con el que se identifica: <span t-field="doc.partner_id.type_document"/><br/>
+                                        <div style="float: left; width: 60%;">
+                                            <div style="width:100%;">
+                                                <br/>
+                                                Número de INE o pasaporte: <span t-field="doc.partner_id.identifier"/><br/>
+                                                <br/>
+                                                Ciudad y Edo:
+                                                <t t-set="coma" t-value=""/>
                                                 <t t-if="doc.partner_id.city">
-                                                    <span t-esc="str(doc.partner_id.city) + str(coma)"/>
+                                                    <t t-set="coma" t-value="str(',')"/>
+                                                </t>
+                                                <t t-if="coma">
+                                                    <t t-if="doc.partner_id.city">
+                                                        <span t-esc="str(doc.partner_id.city) + str(coma)"/>
+                                                        <span t-field="doc.partner_id.l10n_mx_edi_locality"/>
+                                                    </t>
+                                                </t>
+                                                <t t-else="">
                                                     <span t-field="doc.partner_id.l10n_mx_edi_locality"/>
                                                 </t>
-                                            </t>
-                                            <t t-else="">
-                                                <span t-field="doc.partner_id.l10n_mx_edi_locality"/>
-                                            </t>
-                                             a  
-                                            <span t-esc="doc.confirmation_date.strftime('%d')"/>  de  
-                                            <span t-if="doc.confirmation_date.strftime('%m') == '01' ">Enero</span>
-                                            <span t-if="doc.confirmation_date.strftime('%m') == '02' ">Febrero</span>
-                                            <span t-if="doc.confirmation_date.strftime('%m') == '03' ">Marzo</span>
-                                            <span t-if="doc.confirmation_date.strftime('%m') == '04' ">Abril</span>
-                                            <span t-if="doc.confirmation_date.strftime('%m') == '05' ">Mayo</span>
-                                            <span t-if="doc.confirmation_date.strftime('%m') == '06' ">Junio</span>
-                                            <span t-if="doc.confirmation_date.strftime('%m') == '07' ">Julio</span>
-                                            <span t-if="doc.confirmation_date.strftime('%m') == '08' ">Agosto</span>
-                                            <span t-if="doc.confirmation_date.strftime('%m') == '09' ">Septiembre</span>
-                                            <span t-if="doc.confirmation_date.strftime('%m') == '10' ">Octubre</span>
-                                            <span t-if="doc.confirmation_date.strftime('%m') == '11' ">Noviembre</span>
-                                            <span t-if="doc.confirmation_date.strftime('%m') == '12' ">Diciembre</span>
-                                             del <span t-esc="doc.confirmation_date.strftime('%Y')"/> <br/>
-                                            <br/>
-                                            Nombre: <span t-field="doc.partner_id.name_of_sign"/><br/>
-                                            <br/>
+                                                 a  
+                                                <span t-esc="doc.confirmation_date.strftime('%d')"/>  de  
+                                                <span t-if="doc.confirmation_date.strftime('%m') == '01' ">Enero</span>
+                                                <span t-if="doc.confirmation_date.strftime('%m') == '02' ">Febrero</span>
+                                                <span t-if="doc.confirmation_date.strftime('%m') == '03' ">Marzo</span>
+                                                <span t-if="doc.confirmation_date.strftime('%m') == '04' ">Abril</span>
+                                                <span t-if="doc.confirmation_date.strftime('%m') == '05' ">Mayo</span>
+                                                <span t-if="doc.confirmation_date.strftime('%m') == '06' ">Junio</span>
+                                                <span t-if="doc.confirmation_date.strftime('%m') == '07' ">Julio</span>
+                                                <span t-if="doc.confirmation_date.strftime('%m') == '08' ">Agosto</span>
+                                                <span t-if="doc.confirmation_date.strftime('%m') == '09' ">Septiembre</span>
+                                                <span t-if="doc.confirmation_date.strftime('%m') == '10' ">Octubre</span>
+                                                <span t-if="doc.confirmation_date.strftime('%m') == '11' ">Noviembre</span>
+                                                <span t-if="doc.confirmation_date.strftime('%m') == '12' ">Diciembre</span>
+                                                 del <span t-esc="doc.confirmation_date.strftime('%Y')"/> <br/>
+                                                <br/>
+                                                Nombre: <span t-field="doc.partner_id.name_of_sign"/><br/>
+                                                <br/>
 
-                                            <div style="float: left; width: 50%;">
-                                                Firma: <div class="text-center">
-                                                    <img t-att-src="image_data_uri(doc.signature)" style="max-height: 3cm; max-width: 5cm;"/>
+                                                <div style="float: left; width: 60%;">
+                                                    Firma: <div class="text-center">
+                                                        <img t-att-src="image_data_uri(doc.signature)" style="max-height: 3cm; max-width: 5cm;"/>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 50%; padding: 5px;">
-                                                Fecha: <span t-field="doc.confirmation_date"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 40%; padding: 5px;">
-                                        <div style="width:100%;">
-                                            <div style="margin-right:1px;">
-                                                <div class = 'col-xs-6 text-center'>    
-                                                    <img t-attf-src="data:image/*;base64,{{doc.company_id.logo}}" style="width:140px;" />
+                                                <div style="float: left; width: 40%;">
+                                                    Fecha: <span t-field="doc.confirmation_date.strftime('%d/%m/%Y')"/>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                        <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 40%; padding: 5px;">
+                                            <div style="width:100%;">
+                                                <div style="margin-right:1px;">
+                                                    <div class = 'col-xs-6 text-center'>    
+                                                        <img t-attf-src="data:image/*;base64,{{doc.company_id.logo}}" style="width:140px;" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </span
                                 </span>
                             </div>
                         </div>
