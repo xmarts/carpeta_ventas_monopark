@@ -508,7 +508,11 @@
                                                     <br/>
                                                     <br/>
                                                     <br/>
-                                                    <br/>  
+                                                    <br/> 
+                                                    <br/>
+                                                    <br/>
+                                                    <br/>
+                                                    <br/>
                                                         <img 
                                                             t-attf-src="data:image/*;base64,{{doc.company_id.logo}}" style="width:140px;" />
                                                     </div>
