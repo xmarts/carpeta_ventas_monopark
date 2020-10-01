@@ -288,7 +288,7 @@
                 <div  style="page-break-before:always;"></div>
                 <div t-if="doc.state == 'sale' or doc.state == 'done'"
                     style="line-height:0.8;">
-                    <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 48%; padding: 5px;">
+                    <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 49%; padding: 5px;">
                         <div style="width:100%;">
                             <div style="margin-right;" class="text-justify">
                                 <span align="justify" style="font-size:6pt; font-family:roman;">
@@ -402,11 +402,11 @@
                             </div>
                         </div>
                     </div>
-                    <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 4%; padding: 5px;">
+                    <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 2%; padding: 5px;">
                       <div style="width:100%;">
                       </div>
                     </div>
-                    <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 48%; padding: 5px;">
+                    <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 49%; padding: 5px;">
                         <div style="width:100%;">
                             <div style="margin-right;" class="text-justify">
                                 <span align="justify" style="font-size:6pt; font-family:roman;">
