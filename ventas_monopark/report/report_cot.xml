@@ -481,11 +481,13 @@
                                     </div>
                                     Fecha: <span t-field="doc.confirmation_date"/> -->
 
-                                    <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 50%; padding: 5px;">
-                                        <div style="width:100%; background-color: #cacbce;">
+                                    <div style="float: left; width: 60%;">
+                                        <div style="width:100%; background-color: #cacbce;
+                                            font-size:7pt; font-family:roman; line-height:20px"
+                                            align="justify">
                                             <br/>
                                             Número de INE o pasaporte: <span t-field="doc.partner_id.identifier"/><br/>
-                                            <br/>
+                                            <br/><br/>
                                             Ciudad y Edo:
                                             <t t-set="coma" t-value=""/>
                                             <t t-if="doc.partner_id.city">
@@ -529,11 +531,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 50%; padding: 5px;">
+                                    <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 40%; padding: 5px;">
                                         <div style="width:100%; background-color: #9bb0f0;">
                                             <div style="margin-right:1px;">
                                                 <div class = 'col-xs-6 text-right'>    
-                                                    <img t-attf-src="data:image/*;base64,{{doc.company_id.logo}}" style="width:120px;" />
+                                                    <img t-attf-src="data:image/*;base64,{{doc.company_id.logo}}" style="width:140px;" />
                                                 </div>
                                             </div>
                                         </div>
