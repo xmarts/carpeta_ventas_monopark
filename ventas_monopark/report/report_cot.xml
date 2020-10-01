@@ -504,13 +504,13 @@
                                         <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 40%; padding: 5px;">
                                             <div style="width:100%;">
                                                 <div style="margin-right:1px;">
-                                                    <div class = 'col-xs-6 text-center'>    
+                                                    <div class = 'col-xs-6 text-center'>
+                                                    <br/>
+                                                    <br/>
+                                                    <br/>
+                                                    <br/>  
                                                         <img 
-                                                            t-attf-src="data:image/*;base64,{{doc.company_id.logo}}" style="
-                                                            position:absolute;
-                                                            bottom:5px;
-                                                            right:10px;
-                                                            width:140px;" />
+                                                            t-attf-src="data:image/*;base64,{{doc.company_id.logo}}" style="width:140px;" />
                                                     </div>
                                                 </div>
                                             </div>
