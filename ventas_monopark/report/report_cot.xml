@@ -288,17 +288,30 @@
                     <div t-if="doc.state == 'sale' or doc.state == 'done'"
                         style="line-height:0.8;">
                         <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 48%; padding: 5px;">
-                            <div style="width:100%; margin-right;">
-                                <span align="justify" style="font-size:7pt; font-family:roman;"
-                                    class="text-justify">
-                                    <strong>CONTRATO DE COMPRA VENTA AL CONTADO DE PRODUCTO Y/O MOBILIARIO (EN ADELANTE, EL “CONTRATO”)</strong> QUE CELEBRAN, POR UNA PARTE, <strong>CRISTÓBAL FRANCISCO DUEÑEZ BARBA</strong>, EN LO SUCESIVO DENOMINADA COMO <strong>“EL PROVEEDOR” Y/O MONOPARK</strong>, Y POR LA OTRA PARTE, LA PERSONA FÍSICA O MORAL CUYO(S) NOMBRE(S) Y DATOS CONSTAN AL FINAL DEL PRESENTE CONTRATO, EN LO SUCESIVO DENOMINADA COMO <strong>“EL COMPRADOR” (Y EN CONJUNTO CON EL PROVEEDOR COMO “LAS PARTES”),</strong> DE CONFORMIDAD CON LAS SIGUIENTES DEFINICIONES, DECLARACIONES Y CLÁUSULAS:
-                                </span>
-                                <br/><br/>
-                                <div class="text-center">
-                                    <strong>
-                                        DEFINICIONES
-                                    </strong>
+                            <div style="width:100%;">
+                                <div style="margin-right;" class="text-justify">
+                                    <span align="justify" style="font-size:7pt; font-family:roman;">
+                                        <strong>CONTRATO DE COMPRA VENTA AL CONTADO DE PRODUCTO Y/O MOBILIARIO (EN ADELANTE, EL “CONTRATO”)</strong> QUE CELEBRAN, POR UNA PARTE, <strong>CRISTÓBAL FRANCISCO DUEÑEZ BARBA</strong>, EN LO SUCESIVO DENOMINADA COMO <strong>“EL PROVEEDOR” Y/O MONOPARK</strong>, Y POR LA OTRA PARTE, LA PERSONA FÍSICA O MORAL CUYO(S) NOMBRE(S) Y DATOS CONSTAN AL FINAL DEL PRESENTE CONTRATO, EN LO SUCESIVO DENOMINADA COMO <strong>“EL COMPRADOR” (Y EN CONJUNTO CON EL PROVEEDOR COMO “LAS PARTES”),</strong> DE CONFORMIDAD CON LAS SIGUIENTES DEFINICIONES, DECLARACIONES Y CLÁUSULAS:
+                                    </span>
+                                    <br/>
+                                    <div class="text-center">
+                                        <strong style="font-size:7pt; font-family:roman;">
+                                            DEFINICIONES
+                                        </strong>
+                                    </div>
+                                    <span align="justify" style="font-size:7pt; font-family:roman;">
+                                        Para fines del presente contrato se entenderá por: 
+                                        a) <strong>PRESUPUESTO.-</strong> Documento en el cual se detallan los precios del producto, piezas, partes, así como los cobros por concepto de instalación o gastos de envío, en general, todos los gastos resultando de la compraventa.
+                                        b) <strong>Entrega.-</strong> Acción mediante la cual el PROVEEDOR transmite la posesión del producto, en los términos y condiciones que se describen en el presente contrato. 
+                                        c) <strong>Documento de entrega.-</strong> Documento que deberá ser firmado por el COMPRADOR certificando la entrega del producto por parte del PROVEEDOR, en la fecha de entrega. 
+                                        d) <strong>FACTURA.-</strong> Documento que contiene las especificaciones del PRODUCTO y sus montos; así como la información general del COMPRADOR.
+                                        e) <strong>PAGO EFECTIVO.-</strong> El pago de la contraprestación derivada el presente CONTRATO, realizado por EL COMPRADOR, que se ha acreditado en las cuentas bancarias del EL PROVEEDOR y se encuentra disponible.
+                                        f) <strong>SERVICIO DE ENVÍO.-</strong> Es el servicio de traslado del PRODUCTO, que proporciona el PROVEEDOR a través de compañías de transporte, propias o de terceros. 
+                                        g) <strong>ENTREGA A DOMICILIO.-</strong> Las entregas que se realizan en el domicilio proporcionado por escrito por EL COMPRADOR, mismas que se realizan de acuerdo a las políticas de tiempo y entregas del proveedor o de las compañías de transporte.
+                                    </span>
                                 </div>
+                            </div>
+
 
 
 
@@ -420,7 +433,6 @@
                                     8. El cliente se obliga a proporcionar las condiciones necesarias para la adecuada recepción, entrega o resguardo de los equipos de acuerdo con las especificaciones y condiciones que le indique la 
                                     empresa.
                                 </span><br/> -->
-                            </div>
                         </div>
                         <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 4%; padding: 5px;">
                           <div style="width:100%;">
@@ -432,13 +444,24 @@
                                     <span align="justify" style="font-size:7pt; font-family:roman;">
                                         <strong>CONTRATO DE COMPRA VENTA AL CONTADO DE PRODUCTO Y/O MOBILIARIO (EN ADELANTE, EL “CONTRATO”)</strong> QUE CELEBRAN, POR UNA PARTE, <strong>CRISTÓBAL FRANCISCO DUEÑEZ BARBA</strong>, EN LO SUCESIVO DENOMINADA COMO <strong>“EL PROVEEDOR” Y/O MONOPARK</strong>, Y POR LA OTRA PARTE, LA PERSONA FÍSICA O MORAL CUYO(S) NOMBRE(S) Y DATOS CONSTAN AL FINAL DEL PRESENTE CONTRATO, EN LO SUCESIVO DENOMINADA COMO <strong>“EL COMPRADOR” (Y EN CONJUNTO CON EL PROVEEDOR COMO “LAS PARTES”),</strong> DE CONFORMIDAD CON LAS SIGUIENTES DEFINICIONES, DECLARACIONES Y CLÁUSULAS:
                                     </span>
+                                    <br/>
+                                    <div class="text-center">
+                                        <strong style="font-size:7pt; font-family:roman;">
+                                            DEFINICIONES
+                                        </strong>
+                                    </div>
+                                    <span align="justify" style="font-size:7pt; font-family:roman;">
+                                        Para fines del presente contrato se entenderá por: 
+                                        a) <strong>PRESUPUESTO.-</strong> Documento en el cual se detallan los precios del producto, piezas, partes, así como los cobros por concepto de instalación o gastos de envío, en general, todos los gastos resultando de la compraventa.
+                                        b) <strong>Entrega.-</strong> Acción mediante la cual el PROVEEDOR transmite la posesión del producto, en los términos y condiciones que se describen en el presente contrato. 
+                                        c) <strong>Documento de entrega.-</strong> Documento que deberá ser firmado por el COMPRADOR certificando la entrega del producto por parte del PROVEEDOR, en la fecha de entrega. 
+                                        d) <strong>FACTURA.-</strong> Documento que contiene las especificaciones del PRODUCTO y sus montos; así como la información general del COMPRADOR.
+                                        e) <strong>PAGO EFECTIVO.-</strong> El pago de la contraprestación derivada el presente CONTRATO, realizado por EL COMPRADOR, que se ha acreditado en las cuentas bancarias del EL PROVEEDOR y se encuentra disponible.
+                                        f) <strong>SERVICIO DE ENVÍO.-</strong> Es el servicio de traslado del PRODUCTO, que proporciona el PROVEEDOR a través de compañías de transporte, propias o de terceros. 
+                                        g) <strong>ENTREGA A DOMICILIO.-</strong> Las entregas que se realizan en el domicilio proporcionado por escrito por EL COMPRADOR, mismas que se realizan de acuerdo a las políticas de tiempo y entregas del proveedor o de las compañías de transporte.
+                                    </span>
                                 </div>
-                                <br/>
-                                <strong style="font-size:7pt; font-family:roman;" class="text-center">
-                                    DEFINICIONES
-                                </strong>
                             </div>
-
                             <!-- <div style="width:100%; margin-right;" class="text-justify"> -->
                                 <!-- <span align="justify" style="font-size:7pt; font-family:roman;">
                                     En caso de incumplimiento, MONOPARK se reserva el derecho de cobrar una penalidad ó el 
