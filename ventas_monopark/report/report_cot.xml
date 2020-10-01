@@ -495,7 +495,10 @@
                                                     </div>
                                                 </div>
                                                 <div style="float: left; width: 40%;">
-                                                    Fecha: <span t-field="doc.confirmation_date.strftime('%d-%m-%Y')"/>
+                                                    <t t-set="dia" t-value="str(doc.confirmation_date.strftime('%d'))"/>
+                                                    <t t-set="mes" t-value="str(doc.confirmation_date.strftime('%m'))"/>
+                                                    <t t-set="ano" t-value="str(doc.confirmation_date.strftime('%Y'))"/>
+                                                    Fecha: <span t-esc="str(dia) + str('/') + str(mes) + str('/') + str(ano)"/>
                                                 </div>
                                             </div>
                                         </div>
