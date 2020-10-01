@@ -384,7 +384,13 @@
                                     <br/>
                                     <strong>OCTAVA.- GARANTÍA.</strong> El plazo de garantía se especifica según cada línea de producto, el PROVEEDOR se obliga a dar garantía a partir de la fecha de entrega o instalación al COMPRADOR, la cual solo ampara el PRODUCTO adquirido descrito en el pedido y/o factura, a través de la PÓLIZA DE GARANTÍA correspondiente. La vigencia de la PÓLIZA DE GARANTÍA iniciará a partir de la fecha de PAGO EFECTIVO, realizado por EL COMPRADOR.<br/>
                                     Para hacer efectiva la garantía, EL COMPRADOR deberá hacer del conocimiento del PROVEEDOR presentando por escrito el concepto de la reclamación y las evidencias correspondientes.<br/>
-                                    EL PROVEEDOR no tendrá́ la obligación de devolver las cantidades pagadas por EL COMPRADOR, o bien, realizar el cambio físico del PRODUCTO, por situaciones o supuestos distintos a aquellos aplicables a la garantía; incluyendo sin limitar, gustos personales de EL COMPRADOR como: color, estética, diseño, imagen, distribución del espacio o área destinada para su colocación, etcétera.
+                                    EL PROVEEDOR no tendrá́ la obligación de devolver las cantidades pagadas por EL COMPRADOR, o bien, realizar el cambio físico del PRODUCTO, por situaciones o supuestos distintos a aquellos aplicables a la garantía; incluyendo sin limitar, gustos personales de EL COMPRADOR como: color, estética, diseño, imagen, distribución del espacio o área destinada para su colocación, etcétera.<br/>
+                                    <br/>
+                                    <strong>NOVENA.- RELACIÓN LABORAL.-</strong>LAS PARTES acuerdan que, al ser este contrato de naturaleza meramente privada, no existe relación laboral alguna entre EL PROVEEDOR y EL COMPRADOR, ni entre los trabajadores de uno con el otro, pues cada uno cuenta con los elementos materiales y humanos suficientes para cumplir con las obligaciones establecidas en el presente CONTRATO.<br/>
+                                    <br/>
+                                    <strong>DECIMA.- AVISO DE PRIVACIDAD.-</strong> Previo a la firma del presente CONTRATO y en cumplimiento a lo dispuesto en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, EL PROVEEDOR hizo del conocimiento a EL COMPRADOR del aviso de privacidad, así como del procedimiento para ejercer los derechos de acceso, rectificación, cancelación y oposición al tratamiento de sus datos personales en adelante.<br/>
+                                    En este sentido, EL PROVEEDOR se obliga a que los datos personales de EL CONSUMIDOR en su posesión no serán transferidos a terceros para fines distintos a los antes mencionados, salvaguardando la privacidad de estos.<br/>
+                                    De igual manera EL PROVEEDOR hizo del conocimiento a EL COMPRADOR de los términos y condiciones de pago utilizados por EL PROVEEDOR. Ambos documentos, Aviso de Privacidad y Términos y Condiciones de Pago, se encuentran en las páginas de Internet de EL PROVEEDOR: https://mobiliariourbano.monopark.com.mx/
                                 </span>
                             </div>
                         </div>
@@ -397,12 +403,6 @@
                         <div style="width:100%;">
                             <div style="margin-right;" class="text-justify">
                                 <span align="justify" style="font-size:6pt; font-family:roman;">
-                                    <strong>NOVENA.- RELACIÓN LABORAL.-</strong>LAS PARTES acuerdan que, al ser este contrato de naturaleza meramente privada, no existe relación laboral alguna entre EL PROVEEDOR y EL COMPRADOR, ni entre los trabajadores de uno con el otro, pues cada uno cuenta con los elementos materiales y humanos suficientes para cumplir con las obligaciones establecidas en el presente CONTRATO.<br/>
-                                    <br/>
-                                    <strong>DECIMA.- AVISO DE PRIVACIDAD.-</strong> Previo a la firma del presente CONTRATO y en cumplimiento a lo dispuesto en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, EL PROVEEDOR hizo del conocimiento a EL COMPRADOR del aviso de privacidad, así como del procedimiento para ejercer los derechos de acceso, rectificación, cancelación y oposición al tratamiento de sus datos personales en adelante.<br/>
-                                    En este sentido, EL PROVEEDOR se obliga a que los datos personales de EL CONSUMIDOR en su posesión no serán transferidos a terceros para fines distintos a los antes mencionados, salvaguardando la privacidad de estos.<br/>
-                                    De igual manera EL PROVEEDOR hizo del conocimiento a EL COMPRADOR de los términos y condiciones de pago utilizados por EL PROVEEDOR. Ambos documentos, Aviso de Privacidad y Términos y Condiciones de Pago, se encuentran en las páginas de Internet de EL PROVEEDOR: https://mobiliariourbano.monopark.com.mx/<br/>
-                                    <br/>
                                     <strong>DECIMA PRIMERA.-DESCRIPCIONES DEL PRODUCTO.</strong> Será responsabilidad exclusiva del COMPRADOR al momento de firmar el presente contrato revisar minuciosamente que las cantidades, descripciones, marcas, calibres, medidas, colores, acabados, características del producto, entre otros; cumplen con su entera satisfacción, por tanto, EL PROVEEDOR, no acepta ningún tipo de cancelación, devolución, cambio y/o reintegro de dinero si existen errores en descripciones u omisiones que el COMPRADOR haya cometido al momento de la compra.<br/>
                                     Los render, fotografías, dibujos y todo tipo de imagen usada en las cotizaciones, propuestas y pedidos son meramente ilustrativas, no son a diseños a escala. Los colores y diseños pueden variar al producto real, así como las medidas finales pueden tener margen de error al estipulado en la descripción de cada pedido según su tipo de manufactura y EL PROVEEDOR no garantiza dimensiones exactas en sus productos. EL PROVEEDOR no se hace responsable por diferencia en los tonos de colores entre lotes de productos, así como percepción errónea por parte del COMPRADOR en el color o diseño basado en la propuesta digital enviada.<br/>
                                     <br/>
@@ -505,7 +505,12 @@
                                             <div style="width:100%;">
                                                 <div style="margin-right:1px;">
                                                     <div class = 'col-xs-6 text-center'>    
-                                                        <img t-attf-src="data:image/*;base64,{{doc.company_id.logo}}" style="width:140px;" />
+                                                        <img 
+                                                            t-attf-src="data:image/*;base64,{{doc.company_id.logo}}" style="
+                                                            position:absolute;
+                                                            bottom:5px;
+                                                            right:10px;
+                                                            width:140px;" />
                                                     </div>
                                                 </div>
                                             </div>
