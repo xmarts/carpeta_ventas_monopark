@@ -351,11 +351,13 @@
                                         </div>
                                     </div>
                                     <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 96%; padding: 5px;">
-                                        <div style="width:100%;">
-                                            <span align="justify" style="font-size:7pt; font-family:roman;">
-                                                I.-Depósitos de efectivo, cheque o transferencias bancarias a la siguiente cuenta: <strong>CUENTA BANCARIA: SANTANDER, CUENTAHABIENTE/BENEFICIARIO: CRISTOBAL FRANCISCO DUEÑEZ BARBA, CUENTA: 92001934419. CLABE INTERBANCARIA: 014320920019344192</strong><br/>
-                                                II.- Pagos en efectivo, en el domicilio de EL PROVEEDOR.<br/>
-                                            </span>
+                                        <div style="width:100%; line-height:0.8;">
+                                            <div style="margin-right;" class="text-justify">
+                                                <span align="justify" style="font-size:7pt; font-family:roman;">
+                                                    I.-Depósitos de efectivo, cheque o transferencias bancarias a la siguiente cuenta: <strong>CUENTA BANCARIA: SANTANDER, CUENTAHABIENTE/BENEFICIARIO: CRISTOBAL FRANCISCO DUEÑEZ BARBA, CUENTA: 92001934419. CLABE INTERBANCARIA: 014320920019344192</strong><br/>
+                                                    II.- Pagos en efectivo, en el domicilio de EL PROVEEDOR.<br/>
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                     Para los efectos legales que corresponden al presente CONTRATO, cualquier pago de EL COMPRADOR, se considerará en proceso hasta que se convierta en PAGO EFECTIVO. A partir de ese momento, EL PROVEEDOR se obliga a transmitir la propiedad del PRODUCTO en favor de EL COMPRADOR.<br/>
