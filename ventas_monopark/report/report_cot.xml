@@ -353,7 +353,7 @@
                                     <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 96%; padding: 5px;">
                                         <div style="width:100%;">
                                             <div style="margin-right;" class="text-justify">
-                                                <span align="justify" style="font-size:7pt; font-family:roman; line-height:20px;">
+                                                <span align="justify" style="font-size:7pt; font-family:roman; line-height:10px;">
                                                     I.-Depósitos de efectivo, cheque o transferencias bancarias a la siguiente cuenta: <strong>CUENTA BANCARIA: SANTANDER, CUENTAHABIENTE/BENEFICIARIO: CRISTOBAL FRANCISCO DUEÑEZ BARBA, CUENTA: 92001934419. CLABE INTERBANCARIA: 014320920019344192</strong><br/>
                                                     II.- Pagos en efectivo, en el domicilio de EL PROVEEDOR.<br/>
                                                 </span>
@@ -482,12 +482,10 @@
                                     Fecha: <span t-field="doc.confirmation_date"/> -->
 
                                     <div style="float: left; width: 60%;">
-                                        <div style="width:100%; background-color: #cacbce;
-                                            font-size:7pt; font-family:roman; line-height:20px"
-                                            align="justify">
+                                        <div style="width:100%;">
                                             <br/>
                                             Número de INE o pasaporte: <span t-field="doc.partner_id.identifier"/><br/>
-                                            <br/><br/>
+                                            <br/>
                                             Ciudad y Edo:
                                             <t t-set="coma" t-value=""/>
                                             <t t-if="doc.partner_id.city">
@@ -521,7 +519,7 @@
                                             Nombre: <span t-field="doc.partner_id.name_of_sign"/><br/>
                                             <br/>
 
-                                            <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 50%; padding: 5px;">
+                                            <div style="float: left; width: 50%;">
                                                 Firma: <div class="text-center">
                                                     <img t-att-src="image_data_uri(doc.signature)" style="max-height: 3cm; max-width: 5cm;"/>
                                                 </div>
@@ -532,9 +530,9 @@
                                         </div>
                                     </div>
                                     <div style="box-sizing: border-box; -webkit-box-sizing: border-box; float: left; width: 40%; padding: 5px;">
-                                        <div style="width:100%; background-color: #9bb0f0;">
+                                        <div style="width:100%;">
                                             <div style="margin-right:1px;">
-                                                <div class = 'col-xs-6 text-right'>    
+                                                <div class = 'col-xs-6 text-center'>    
                                                     <img t-attf-src="data:image/*;base64,{{doc.company_id.logo}}" style="width:140px;" />
                                                 </div>
                                             </div>
