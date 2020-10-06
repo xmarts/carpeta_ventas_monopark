@@ -139,6 +139,15 @@ class ReportCot(models.Model):
 				record.proyecto_sale_dos = record.opportunity_id.name
 			else:
 				record.proyecto_sale_dos = ""
+
+	def validar_firma(self):
+		result = ''
+		for record in self:
+			if record.signature:
+				result = 'valor'
+		return result
+
+
 class SaleReport(models.Model):
 	_inherit = 'sale.report'
 
