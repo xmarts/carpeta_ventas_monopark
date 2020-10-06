@@ -499,10 +499,9 @@
                                                 <div style="float: left; width: 60%;">
                                                     Firma: 
                                                     <div class="text-center">
-                                                        <t t-esc="doc.validar_firma()"/>
-                                                        <!-- <t t-if="doc.signature">
+                                                        <t t-if="doc.validar_firma()">
                                                             <img t-att-src="image_data_uri(doc.signature)" style="max-height: 3cm; max-width: 5cm;"/>
-                                                        </t> -->
+                                                        </t>
                                                     </div>
                                                 </div>
                                                 <div style="float: left; width: 40%;">
