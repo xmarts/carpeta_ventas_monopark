@@ -497,7 +497,7 @@
                                                 Nombre: <span t-field="doc.partner_id.name_of_sign"/><br/>
                                                 <br/>
                                                 <div style="float: left; width: 60%;">
-                                                    Firma: <t t-if="doc.signature"><div class="text-center">
+                                                    Firma: <div class="text-center"><t t-if="doc.signature">
                                                         <img t-att-src="image_data_uri(doc.signature)" style="max-height: 3cm; max-width: 5cm;"/>
                                                         </t>
                                                     </div>
