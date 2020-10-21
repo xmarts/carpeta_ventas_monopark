@@ -452,7 +452,7 @@
                                                 <br/><br/>
                                                 <strong>Contacto: </strong> <span t-field="doc.partner_id.name"/><br/>
                                                 <br/>
-                                                Razón Social – Física o Moral: <span t-field="doc.partner_id.parent_id.name"/><br/>
+                                                Razón Social – Física o Moral: <span t-field="doc.partner_id.x_studio_razn_social"/><br/>
                                                 <br/>
                                                 Representante legal o persona Física: <span t-field="doc.partner_id.parent_id.legal_representative"/><br/>
                                                 <br/>
