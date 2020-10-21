@@ -453,12 +453,12 @@
                                                 <strong>Contacto: </strong> <span t-field="doc.partner_id.name"/><br/>
                                                 <br/>
                                                 Razón Social – Física o Moral:
-                                                <t t-if="doc.partner_id.parent_id.razn_social">
+                                                <t t-if="doc.partner_id.parent_id.social_razn">
                                                     
-                                                    <span t-field="doc.partner_id.parent_id.razn_social"/><br/>
+                                                    <span t-field="doc.partner_id.parent_id.social_razn"/><br/>
                                                 </t>
                                                 <t t-else="">
-                                                    <span t-field="doc.partner_id.razn_social"/><br/>
+                                                    <span t-field="doc.partner_id.social_razn"/><br/>
                                                 </t>
                                                 <br/>
                                                 Representante legal o persona Física:
