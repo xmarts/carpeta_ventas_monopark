@@ -452,9 +452,24 @@
                                                 <br/><br/>
                                                 <strong>Contacto: </strong> <span t-field="doc.partner_id.name"/><br/>
                                                 <br/>
-                                                Razón Social – Física o Moral: <span t-field="doc.partner_id.x_studio_razn_social"/><br/>
+                                                Razón Social – Física o Moral:
+                                                <t t-if="doc.partner_id.parent_id.razn_social">
+                                                    
+                                                    <span t-field="doc.partner_id.parent_id.razn_social"/><br/>
+                                                </t>
+                                                <t t-else="">
+                                                    <span t-field="doc.partner_id.razn_social"/><br/>
+                                                </t>
                                                 <br/>
-                                                Representante legal o persona Física: <span t-field="doc.partner_id.parent_id.legal_representative"/><br/>
+                                                Representante legal o persona Física:
+                                                <t t-if="doc.partner_id.parent_id.legal_representative">
+                                                    
+                                                    <span t-field="doc.partner_id.parent_id.legal_representative"/><br/>
+                                                </t>
+                                                <t t-else="">
+                                                    <span t-field="doc.partner_id.legal_representative"/><br/>
+                                                </t>
+
                                                 <br/>
                                                 Tipo de documento con el que se identifica: <span t-field="doc.partner_id.type_document"/><br/>
                                                 <br/>
