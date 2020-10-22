@@ -505,13 +505,25 @@
                                                 <span t-if="doc.confirmation_date.strftime('%m') == '12' ">Diciembre</span>
                                                  del <span t-esc="doc.confirmation_date.strftime('%Y')"/> <br/>
                                                 <br/>
-                                                Nombre: <span t-field="doc.partner_id.name_of_sign"/><br/>
+                                                
                                                 <br/>
                                                 <div style="float: left; width: 60%;">
                                                     Firma: 
                                                     <div class="text-center">
                                                         <t t-if="doc.validar_firma()">
                                                             <img t-att-src="image_data_uri(doc.signature)" style="max-height: 3cm; max-width: 5cm;"/>
+                                                            <t t-if="doc.partner_id.parent_id.name_of_sign">
+                                                                <span t-field="doc.partner_id.parent_id.name_of_sign"/><br/>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <span t-field="doc.partner_id.name_of_sign"/><br/>
+                                                            </t>
+                                                            <t t-if="doc.partner_id.parent_id.puesto">
+                                                                <span t-field="doc.partner_id.parent_id.puesto"/><br/>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <span t-field="doc.partner_id.puesto"/><br/>
+                                                            </t>
                                                         </t>
                                                     </div>
                                                 </div>

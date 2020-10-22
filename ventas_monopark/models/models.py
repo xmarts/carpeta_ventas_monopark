@@ -151,7 +151,6 @@ class ReportCot(models.Model):
 class SaleReport(models.Model):
 	_inherit = 'sale.report'
 
-	
 	fecha_meta = fields.Date(string='Fecha Meta',readonly=True)
 
 	def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
@@ -159,7 +158,7 @@ class SaleReport(models.Model):
 		groupby+=',s.x_studio_fecha_meta'
 		return super(SaleReport, self)._query(with_clause, fields, groupby, from_clause)
 
-#INHERIT A LA TABLA DE PEDIDO DE VENTA, PARA AGREGAR DOS NUEVAS COLUMNAS
+# INHERIT A LA TABLA DE PEDIDO DE VENTA, PARA AGREGAR DOS NUEVAS COLUMNAS
 class ReportCot(models.Model):
 	_inherit = "sale.order.line"
 
