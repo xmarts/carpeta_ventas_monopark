@@ -469,12 +469,6 @@
                                                 <t t-else="">
                                                     <span t-field="doc.partner_id.legal_representative"/><br/>
                                                 </t>
-
-                                                <br/>
-                                                Tipo de documento con el que se identifica: <span t-field="doc.partner_id.type_document"/><br/>
-                                                <br/>
-                                                Número de INE o pasaporte: <span t-field="doc.partner_id.identifier"/><br/>
-                                                <br/>
                                                 Ciudad y Edo:
                                                 <t t-set="coma" t-value=""/>
                                                 <t t-if="doc.partner_id.city">
