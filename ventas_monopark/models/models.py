@@ -27,7 +27,7 @@ class pagos_pagos(models.Model):
 		return node[0] if node else None
 
 
-	@api.multi
+	@api.model
 	def complemento(self):
 		self.pagos_con = [(5, 0, 0)]
 		data = base64.decodestring(self.l10n_mx_edi_cfdi)
@@ -90,7 +90,7 @@ class Observaciones(models.Model):
 	name = fields.Char(string="Nombre")
 	description = fields.Text(string="Descripción de la observación")
 
-	@api.multi
+	@api.model
 	def name_get(self):
 		result = []
 		for record in self:
@@ -120,9 +120,9 @@ class ReportCot(models.Model):
 		('type6', 'Gratis ZM GDL'),
 		('type7', 'Gratis ZM CDMX'),
 		('type8', 'Gratis ZM Mérida'),], string="Instalación", default='type1')
-	entrega = fields.Many2many('tiempo.entrega', string="Tiempo de entrega")
+	entrega = fields.Many2many('tiempo.entrega', string="Tiempo de entrega", compute="_get_values")
 	forma_pago = fields.Char(string="Forma de pago")
-	observaciones =fields.Many2many('obser.sale', string="Observaciones")
+	observaciones =fields.Many2many('obser.sale', string="Observaciones", required=True)
 	pago_importacion = fields.Char(string="En los productos de importacion y fabricacion el pago sera")
 	nota_venta = fields.Char(string="Nota", default="Precios sujetos a cambio sin previo aviso")
 	comentarios = fields.Char(string="Comentarios")
@@ -132,7 +132,16 @@ class ReportCot(models.Model):
 	# advance = fields.Boolean(string="¿Tiene anticipo?")
 	# target_date = fields.Date(string="Fecha meta")
 
-	@api.one
+	@api.depends('order_line.tiempo_entrega_tabla')
+	def _get_values(self):
+		ids = []
+		for record in self.order_line:
+			if record.tiempo_entrega_tabla:
+				ids.append(record.tiempo_entrega_tabla.id)
+		self.write({
+			'entrega': [(6,0, ids)]
+			})
+
 	def _opportunity_in_proyecto(self):
 		for record in self:
 			if record.opportunity_id:
@@ -147,24 +156,23 @@ class ReportCot(models.Model):
 				result = 'valor'
 		return result
 
+# /////// DESCOMENTAR HASTA QUE SEA AGREGADO EL CAMPO X_STUDIO_FECHA_META DESDE STUDO //////////////////////////////////// #
+# class SaleReport(models.Model):
+# 	_inherit = 'sale.report'
 
-class SaleReport(models.Model):
-	_inherit = 'sale.report'
+# 	fecha_meta = fields.Date(string='Fecha Meta',readonly=True)
 
-	fecha_meta = fields.Date(string='Fecha Meta',readonly=True)
-
-	def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
-		fields['fecha_meta'] = ", s.x_studio_fecha_meta as fecha_meta"
-		groupby+=',s.x_studio_fecha_meta'
-		return super(SaleReport, self)._query(with_clause, fields, groupby, from_clause)
+# 	def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
+# 		fields['fecha_meta'] = ", s.x_studio_fecha_meta as fecha_meta"
+# 		groupby+=',s.x_studio_fecha_meta'
+# 		return super(SaleReport, self)._query(with_clause, fields, groupby, from_clause)
 
 # INHERIT A LA TABLA DE PEDIDO DE VENTA, PARA AGREGAR DOS NUEVAS COLUMNAS
 class ReportCot(models.Model):
 	_inherit = "sale.order.line"
 
-	#price_unit = fields.Float('Unit Price', required=True, digits=dp.get_precision('Product Price'), default=0.0)
 	imagen_producto = fields.Binary(compute="_get_imagen")
-	tiempo_entrega_tabla = fields.Many2many('tiempo.entrega', string="Tiempo de entrega")
+	tiempo_entrega_tabla = fields.Many2many('tiempo.entrega', string="Tiempo de entregaa", required=True)
 	price_product_cantidad = fields.Monetary(compute='_compute_product_cantidad', string='Subtotal', readonly=True, store=True)
 	precio_especial= fields.Monetary(string="Precio especial", compute="_get_precio_especial")
 	precio_publico_reporte = fields.Monetary(compute="_get_precio_publico_reporte")
@@ -204,11 +212,11 @@ class ReportCot(models.Model):
 		for line in self:
 			line.price_product_cantidad = line.product_uom_qty * line.price_unit
 
-	@api.depends('product_id')
+	@api.onchange('product_id')
 	def _get_imagen(self):
 		for line in self:
 			if line.product_id:
-				line.imagen_producto = line.product_id.image_medium
+				line.imagen_producto = line.product_id.image_128
 
 class PrickingStock(models.Model):
 	_inherit = "stock.picking"
@@ -229,7 +237,7 @@ class PrickingStock(models.Model):
 			 " * Ready: products are reserved and ready to be sent. If the shipping policy is 'As soon as possible' this happens as soon as anything is reserved.\n"
 			 " * Done: has been processed, can't be modified or cancelled anymore.\n"
 			 " * Cancelled: has been cancelled, can't be confirmed anymore.")
-	@api.multi
+	@api.model
 	def action_confirm(self):
 		""" Check availability of picking moves.
 		This has the effect of changing the state and reserve quants on available moves, and may
@@ -250,7 +258,7 @@ class PrickingStock(models.Model):
 				.mapped('move_lines')._action_assign()
 			return True
 
-	@api.multi
+	@api.model
 	def action_in_waiting(self):
 		self.mapped('package_level_ids').filtered(lambda pl: pl.state == 'draft' and not pl.move_ids)._generate_moves()
 		# call `_action_confirm` on every draft move
@@ -265,9 +273,19 @@ class PrickingStock(models.Model):
 class StockMoveInherit(models.Model):
 	_inherit = "stock.move"
 
-	tiempo_entrega_tabla = fields.Many2many('tiempo.entrega', string="Tiempo de entrega", related="sale_line_id.tiempo_entrega_tabla")
+	tiempo_entrega_tabla = fields.Many2many('tiempo.entrega', string="Tiempo de entregaa", related="sale_line_id.tiempo_entrega_tabla")
 
 class checkbox(models.Model):
 	_inherit="product.pricelist"
 
 	tipotarifa=fields.Boolean(string="¿Es tarifa publica?")
+
+class ProductProduct(models.Model):
+	_inherit = 'product.product'
+
+	attribute_value_ids = fields.Many2many('product.attribute.value',string="Valores de atributo")
+
+class ProductTemplate(models.Model):
+	_inherit = 'product.template'
+
+	x_studio_company_ids = fields.Many2many('res.company', string="Compañias")
