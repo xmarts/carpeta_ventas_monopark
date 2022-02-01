@@ -138,7 +138,7 @@
                                         <t t-if="not line.display_type">
                                             <!-- IMAGEN -->
                                             <td>
-                                                <img t-if="line.product_id.image_medium" t-att-src="image_data_uri(line.product_id.image_medium)" style="width:100%;"/>
+                                                <img t-if="line.product_id.image_512" t-att-src="image_data_uri(line.product_id.image_512)" style="width:100%;"/>
                                             </td>
                                             <!-- DESCRIPCION -->
                                             <td style="font-size:9pt;width:220px;">
