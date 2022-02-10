@@ -285,7 +285,7 @@ class ProductProduct(models.Model):
 
 	attribute_value_ids = fields.Many2many('product.attribute.value',string="Valores de atributo")
 
-class ProductTemplate(models.Model):
-	_inherit = 'product.template'
+# class ProductTemplate(models.Model):
+# 	_inherit = 'product.template'
 
-	x_studio_company_ids = fields.Many2many('res.company', string="Compañias")
+# 	x_studio_company_ids = fields.Many2many('res.company', string="Compañias")
