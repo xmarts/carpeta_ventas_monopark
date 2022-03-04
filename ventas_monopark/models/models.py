@@ -273,7 +273,7 @@ class PrickingStock(models.Model):
 class StockMoveInherit(models.Model):
 	_inherit = "stock.move"
 
-	tiempo_entrega_tabla = fields.Many2many('tiempo.entrega', string="Tiempo de entregaa", related="sale_line_id.tiempo_entrega_tabla")
+	tiempo_entrega_tabla = fields.Many2many('tiempo.entrega', string="Tiempo de entrega", related="sale_line_id.tiempo_entrega_tabla")
 
 class checkbox(models.Model):
 	_inherit="product.pricelist"
