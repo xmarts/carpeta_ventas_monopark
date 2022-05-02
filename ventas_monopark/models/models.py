@@ -237,15 +237,14 @@ class PrickingStock(models.Model):
 			 " * Ready: products are reserved and ready to be sent. If the shipping policy is 'As soon as possible' this happens as soon as anything is reserved.\n"
 			 " * Done: has been processed, can't be modified or cancelled anymore.\n"
 			 " * Cancelled: has been cancelled, can't be confirmed anymore.")
-	@api.model
+
 	def action_confirm(self):
 		""" Check availability of picking moves.
 		This has the effect of changing the state and reserve quants on available moves, and may
 		also impact the state of the picking as it is computed based on move's states.
 		@return: True
 		"""
-		if self.picking_type_code == 'outgoing':
-			print('hola')
+		if self.picking_type_id.code == 'outgoing':
 			self.state='in_wait'
 		else:
 			self.mapped('package_level_ids').filtered(lambda pl: pl.state == 'draft' and not pl.move_ids)._generate_moves()
