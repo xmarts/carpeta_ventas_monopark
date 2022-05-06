@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import logging, re
 import base64
 from datetime import datetime, date
 from itertools import groupby
@@ -297,6 +298,25 @@ class SaleReport(models.Model):
 		groupby += ', s.x_studio_fecha_meta'
 
 		return super(SaleReport, self)._query(with_clause, fields, groupby, from_clause)
+	
+	@api.model
+	def read_group(self, domain, fields, groupby, offset=0, limit=None, orderby=False, lazy=True):
+
+		date_meta = next((field for field in fields if re.search(r'\bdate_meta\b', field)), False)
+
+		if date_meta:
+			fields.remove(date_meta)
+			if any(field.split(':')[1].split('(')[0] != 'avg' for field in [date_meta] if field):
+				raise UserError("Value: 'date_meta'")
+
+		res = []
+		if fields:
+			res = super(SaleReport, self).read_group(domain, fields, groupby, offset=offset, limit=limit, orderby=orderby, lazy=lazy)
+
+		if not res and date_meta:
+			res = [{}]
+
+		return res
 
 # class ProductTemplate(models.Model):
 # 	_inherit = 'product.template'
