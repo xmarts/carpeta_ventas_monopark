@@ -129,6 +129,7 @@ class ReportCot(models.Model):
 	comentarios = fields.Char(string="Comentarios")
 	proyecto = fields.Char(string="Proyecto")
 	aditional_comment = fields.Text(string="Comentarios adicionales")
+	date_meta = fields.Date(string="Fecha Meta")
 
 	# advance = fields.Boolean(string="¿Tiene anticipo?")
 	# target_date = fields.Date(string="Fecha meta")
@@ -174,11 +175,11 @@ class ReportCot(models.Model):
 class SaleReport(models.Model):
     _inherit = 'sale.report'
 
-    x_studio_fecha_meta = fields.Date('Fecha Meta', readonly=True)
+    date_meta = fields.Date('Fecha Meta', readonly=True)
 
     def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
-        fields['x_studio_fecha_meta'] = ", s.x_studio_fecha_meta as x_studio_fecha_meta"
-        groupby += ', s.x_studio_fecha_meta'
+        fields['date_meta'] = ", s.date_meta as date_meta"
+        groupby += ', s.date_meta'
         return super(SaleReport, self)._query(with_clause, fields, groupby, from_clause)
 
 # /////// DESCOMENTAR HASTA QUE SEA AGREGADO EL CAMPO X_STUDIO_FECHA_META DESDE STUDO //////////////////////////////////// #

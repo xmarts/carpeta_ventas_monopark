@@ -15,6 +15,7 @@
           <field name="instalacion"/>
           <field name="entrega" widget="many2many_tags" options="{'no_create_edit': True}"/>
           <field name="forma_pago"/>
+          <field name="date_meta"/>
           <field name="proyecto" invisible="1"/>
         </xpath>
         <xpath expr="//field[@name='validity_date']" position="before">
