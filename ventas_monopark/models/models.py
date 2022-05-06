@@ -174,7 +174,7 @@ class ReportCot(models.Model):
 class SaleReport(models.Model):
     _inherit = 'sale.report'
 
-    x_studio_fecha_meta = fields.Many2one('Fecha Meta', readonly=True)
+    x_studio_fecha_meta = fields.Date('Fecha Meta', readonly=True)
 
     def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
         fields['x_studio_fecha_meta'] = ", s.x_studio_fecha_meta as x_studio_fecha_meta"
