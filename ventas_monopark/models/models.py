@@ -284,6 +284,20 @@ class ProductProduct(models.Model):
 
 	attribute_value_ids = fields.Many2many('product.attribute.value',string="Valores de atributo")
 
+
+
+class SaleReport(models.Model):
+	_inherit = 'sale.report'
+
+	date_meta = fields.Date(string="Fecha Meta", readonly=True)
+
+	def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
+		fields['x_studio_fecha_meta'] = ', s.x_studio_fecha_meta as date_meta'
+
+		groupby += ', s.x_studio_fecha_meta'
+
+		return super(SaleReport, self)._query(with_clause, fields, groupby, from_clause)
+
 # class ProductTemplate(models.Model):
 # 	_inherit = 'product.template'
 
