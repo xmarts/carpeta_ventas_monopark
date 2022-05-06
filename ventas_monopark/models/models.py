@@ -292,7 +292,7 @@ class SaleReport(models.Model):
 	date_meta = fields.Date(string="Fecha Meta", readonly=True)
 
 	def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
-		fields['x_studio_fecha_meta'] = ', s.x_studio_fecha_meta as date_meta'
+		fields['date_meta'] = ', s.x_studio_fecha_meta as date_meta'
 
 		groupby += ', s.x_studio_fecha_meta'
 
