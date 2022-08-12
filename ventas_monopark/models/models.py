@@ -158,6 +158,20 @@ class ReportCot(models.Model):
 				result = 'valor'
 		return result
 
+class CrmLead(models.Model):
+	_inherit = 'crm.lead'
+
+	date_meta = fields.Date(
+		string="Fecha Meta",
+		compute='_get_date_meta'
+	)
+
+	def _get_date_meta(self):
+		meta = self.env['sale.order'].search([], limit=1)
+		for date in meta:
+			if date.date_meta:
+				self.date_meta = date.date_meta
+
 
 # class SaleReport(models.Model):
 # 	_inherit = 'sale.report'

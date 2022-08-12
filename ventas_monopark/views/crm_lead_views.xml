@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+
+        <record id="cmr_lead_form_meta" model="ir.ui.view">
+            <field name="name">cmr.lead.form.meta</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+            <xpath expr="//group/group[8]" position="inside" >
+                <field name="date_meta"/>
+            </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
