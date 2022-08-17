@@ -14,6 +14,10 @@ from odoo.tools import DEFAULT_SERVER_TIME_FORMAT
 from odoo.tools.float_utils import float_compare
 from odoo.tools.misc import html_escape
 from odoo.exceptions import UserError, ValidationError
+
+import logging
+
+_logger =logging.getLogger(__name__)
 #MODELO PARA FACTURAS CONCILIADAS AL PAGO
 class pagos_pagos(models.Model):
 	_inherit = 'account.payment'
@@ -166,11 +170,12 @@ class CrmLead(models.Model):
 		compute='_get_date_meta'
 	)
 
+
 	def _get_date_meta(self):
-		meta = self.env['sale.order'].search([], limit=1)
-		for date in meta:
-			if date.date_meta:
-				self.date_meta = date.date_meta
+		for rec in self:
+			meta = self.env['sale.order'].search([('opportunity_id', '=', rec.id)])[0]
+			rec.date_meta = meta.date_meta
+			
 
 
 # class SaleReport(models.Model):
