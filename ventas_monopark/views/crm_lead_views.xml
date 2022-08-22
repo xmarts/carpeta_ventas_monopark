@@ -15,20 +15,5 @@
             </field>
         </record>
 
-        <!-- <record id="cmr_lead_form_meta_studio" model="ir.ui.view">
-            <field name="name">cmr.lead.form.meta.studio</field>
-            <field name="model">crm.lead</field>
-            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
-            <field name="arch" type="xml">
-                <xpath expr="//group/group[8]" position="inside" >
-                    <field name="date_meta"/>
-                </xpath>
-                <xpath expr="//field[@name='partner_id']" position="attributes">
-                    <attribute name="required">True</attribute>
-                </xpath>
-            </field>
-        </record> -->
-
-
     </data>
 </odoo>
