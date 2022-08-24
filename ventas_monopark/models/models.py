@@ -173,12 +173,12 @@ class CrmLead(models.Model):
 
 	def _get_date_meta(self):
 		for rec in self:
+			rec.date_meta = None
 			oportunity = self.env['sale.order'].search([('opportunity_id', '=', rec.id)])
 			if oportunity:
 				if oportunity[0].date_meta:
 					rec.date_meta = oportunity[0].date_meta
-				else:
-					rec.date_meta = None
+					
 			
 
 # class SaleReport(models.Model):
