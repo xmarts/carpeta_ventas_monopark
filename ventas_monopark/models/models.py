@@ -167,7 +167,7 @@ class CrmLead(models.Model):
 
 	date_meta = fields.Date(
 		string="Fecha Meta",
-		store= True,
+		#store= True,
 		compute='_get_date_meta'
 	)
 
