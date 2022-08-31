@@ -15,5 +15,23 @@
             </field>
         </record>
 
+        <record id="view_crm_case_date_meta_filter" model="ir.ui.view">
+            <field name="name">crm.lead.search.date.meta</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_opportunity_report_view_search"/>
+            <field name="arch" type="xml">
+                
+                <xpath expr="//field[@name='create_date']" position="before">
+                    <field name="date_meta"/>
+                </xpath>
+                <xpath expr="//filter[@name='filter_create_date']" position="before">
+                    <filter name="filter_date_meta" date="date_meta"/>
+                </xpath> 
+                <xpath expr="//group[2]/filter[@name='month']" position="before">
+                    <filter string="Fecha Meta" name="date_meta" context="{'group_by':'date_meta'}"/>
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </odoo>

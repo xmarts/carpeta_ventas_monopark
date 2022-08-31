@@ -167,6 +167,7 @@ class CrmLead(models.Model):
 
 	date_meta = fields.Date(
 		string="Fecha Meta",
+		store= True,
 		compute='_get_date_meta'
 	)
 
@@ -337,3 +338,5 @@ class ProductProduct(models.Model):
 # 	_inherit = 'product.template'
 
 # 	x_studio_company_ids = fields.Many2many('res.company', string="Compañias")
+
+
