@@ -16,7 +16,7 @@
             </field>
         </record>
 
-        <!-- <record id="view_crm_case_date_meta_filter" model="ir.ui.view">
+        <record id="view_crm_case_date_meta_filter" model="ir.ui.view">
             <field name="name">crm.lead.search.date.meta</field>
             <field name="model">crm.lead</field>
             <field name="inherit_id" ref="crm.crm_opportunity_report_view_search"/>
@@ -32,7 +32,7 @@
                     <filter string="Fecha Meta" name="date_meta_rel" context="{'group_by':'date_meta_rel'}"/>
                 </xpath>
             </field>
-        </record> -->
+        </record>
 
     </data>
 </odoo>
