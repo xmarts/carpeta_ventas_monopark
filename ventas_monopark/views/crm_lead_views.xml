@@ -7,8 +7,8 @@
             <field name="inherit_id" ref="crm.crm_lead_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//group/group[7]" position="inside" >
-                    <field name="date_meta" invisible="1"/>
-                    <field name="date_meta_rel"/>
+                    <field name="date_meta"/>
+                    <field name="date_meta_rel"  invisible="1"/>
                 </xpath>
                 <xpath expr="//field[@name='partner_id']" position="attributes">
                     <attribute name="required">True</attribute>
