@@ -168,13 +168,14 @@ class CrmLead(models.Model):
 	date_meta = fields.Date(
 		string="Fecha Meta",
 		compute='_get_date_meta',
+		search='_search_meta'
 	)
 
-	date_meta_rel = fields.Date(
-		string="Fecha Meta",
-		related='date_meta',
-		store=True,
-	)
+	# date_meta_rel = fields.Date(
+	# 	string="Fecha Meta",
+	# 	related='date_meta',
+	# 	store=True,
+	# )
 
 
 	def _get_date_meta(self):
@@ -184,7 +185,12 @@ class CrmLead(models.Model):
 			if oportunity:
 				if oportunity[0].date_meta:
 					rec.date_meta = oportunity[0].date_meta
-					
+
+	def _search_meta(self, operator, value):
+		for rec in self:
+			meta_date = rec.date_meta
+		return [('date_meta', '=', meta_date)]
+
 			
 
 # class SaleReport(models.Model):
