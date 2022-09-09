@@ -7,7 +7,8 @@
             <field name="inherit_id" ref="crm.crm_lead_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//group/group[7]" position="inside" >
-                    <field name="date_meta"/>
+                    <field name="date_meta" invisible="1"/>
+                    <field name="date_meta_rel"/>
                 </xpath>
                 <xpath expr="//field[@name='partner_id']" position="attributes">
                     <attribute name="required">True</attribute>
@@ -15,7 +16,7 @@
             </field>
         </record>
 
-        <record id="view_crm_case_date_meta_filter" model="ir.ui.view">
+        <!-- <record id="view_crm_case_date_meta_filter" model="ir.ui.view">
             <field name="name">crm.lead.search.date.meta</field>
             <field name="model">crm.lead</field>
             <field name="inherit_id" ref="crm.crm_opportunity_report_view_search"/>
@@ -23,15 +24,15 @@
                 
                 <xpath expr="//field[@name='create_date']" position="before">
                     <field name="date_meta"/>
-                </xpath>
+                </xpath> -->
                 <!-- <xpath expr="//filter[@name='filter_create_date']" position="before">
                     <filter name="filter_date_meta" date="date_meta_rel"/>
                 </xpath>  -->
                 <!-- <xpath expr="//group[2]/filter[@name='month']" position="before">
                     <filter string="Fecha Meta" name="date_meta_rel" context="{'group_by':'date_meta_rel'}"/>
                 </xpath> -->
-            </field>
-        </record>
+            <!-- </field>
+        </record> -->
 
     </data>
 </odoo>
