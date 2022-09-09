@@ -187,10 +187,8 @@ class CrmLead(models.Model):
 					rec.date_meta = oportunity[0].date_meta
 
 	def _search_meta(self, operator, value):
-		for rec in self:
-			oportunity = self.env['sale.order'].search([('opportunity_id', '=', rec.id)])
-			meta_date = oportunity[0].date_meta
-			return [('date_meta', '=', meta_date)]
+		meta_date = self.date_meta
+		return [('date_meta', '=', meta_date)]
 
 			
 
