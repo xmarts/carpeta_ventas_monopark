@@ -184,6 +184,11 @@ class CrmLead(models.Model):
 			if oportunity:
 				if oportunity[0].date_meta:
 					rec.date_meta = oportunity[0].date_meta
+					rec.date_meta_rel = oportunity.date_meta
+				else:
+					rec.date_meta = ''
+			else:
+				rec.date_meta = ''
 
 	# def _search_meta(self, operator, value):
 	# 	for rec in self:
