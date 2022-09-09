@@ -23,14 +23,14 @@
             <field name="arch" type="xml">
                 
                 <xpath expr="//field[@name='create_date']" position="before">
-                    <field name="date_meta_rel"/>
+                    <field name="date_meta"/>
                 </xpath>
-                <xpath expr="//filter[@name='filter_create_date']" position="before">
+                <!-- <xpath expr="//filter[@name='filter_create_date']" position="before">
                     <filter name="filter_date_meta" date="date_meta_rel"/>
-                </xpath> 
-                <xpath expr="//group[2]/filter[@name='month']" position="before">
+                </xpath>  -->
+                <!-- <xpath expr="//group[2]/filter[@name='month']" position="before">
                     <filter string="Fecha Meta" name="date_meta_rel" context="{'group_by':'date_meta_rel'}"/>
-                </xpath>
+                </xpath> -->
             </field>
         </record>
 
