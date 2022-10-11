@@ -125,7 +125,11 @@ class ReportCot(models.Model):
 		('type6', 'Gratis ZM GDL'),
 		('type7', 'Gratis ZM CDMX'),
 		('type8', 'Gratis ZM Mérida'),], string="Instalación", default='type1')
-	entrega = fields.Many2many('tiempo.entrega', string="Tiempo de entrega", compute="_get_values")
+	entrega = fields.Many2many('tiempo.entrega', string="Tiempo de entrega")
+	ejecute_entrega = fields.Boolean(
+		string="Prueba",
+		compute="_get_values"
+	)
 	forma_pago = fields.Char(string="Forma de pago")
 	observaciones =fields.Many2many('obser.sale', string="Observaciones", required=True)
 	pago_importacion = fields.Char(string="En los productos de importacion y fabricacion el pago sera")
@@ -147,6 +151,7 @@ class ReportCot(models.Model):
 		self.write({
 			'entrega': [(6,0, ids)]
 			})
+		self.ejecute_entrega = True
 
 	def _opportunity_in_proyecto(self):
 		for record in self:
